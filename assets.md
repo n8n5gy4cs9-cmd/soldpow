@@ -9,6 +9,53 @@ Regenerate everything: `python3 tools/gen_assets.py` (overwrites!).  Machine lis
 
 | Use | Name | Path | Source |
 |---|---|---|---|
+| SFX: shot_pistol | shot_pistol | `assets/sfx/shot_pistol.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_revolver | shot_revolver | `assets/sfx/shot_revolver.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_smg | shot_smg | `assets/sfx/shot_smg.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_rifle | shot_rifle | `assets/sfx/shot_rifle.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_shotgun | shot_shotgun | `assets/sfx/shot_shotgun.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_sniper | shot_sniper | `assets/sfx/shot_sniper.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_minigun | shot_minigun | `assets/sfx/shot_minigun.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_flame | shot_flame | `assets/sfx/shot_flame.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_ice | shot_ice | `assets/sfx/shot_ice.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_acid | shot_acid | `assets/sfx/shot_acid.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_thunder | shot_thunder | `assets/sfx/shot_thunder.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_rail | shot_rail | `assets/sfx/shot_rail.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_rocket | shot_rocket | `assets/sfx/shot_rocket.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_grenade | shot_grenade | `assets/sfx/shot_grenade.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_powder | shot_powder | `assets/sfx/shot_powder.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_trick | shot_trick | `assets/sfx/shot_trick.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: melee | melee | `assets/sfx/melee.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: explosion | explosion | `assets/sfx/explosion.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: explosion_big | explosion_big | `assets/sfx/explosion_big.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: hit_flesh | hit_flesh | `assets/sfx/hit_flesh.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: hit_wall | hit_wall | `assets/sfx/hit_wall.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: hurt | hurt | `assets/sfx/hurt.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: die | die | `assets/sfx/die.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: jump | jump | `assets/sfx/jump.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: land | land | `assets/sfx/land.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: step | step | `assets/sfx/step.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: jet | jet | `assets/sfx/jet.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: pickup | pickup | `assets/sfx/pickup.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: pickup_weapon | pickup_weapon | `assets/sfx/pickup_weapon.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: reload | reload | `assets/sfx/reload.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: empty | empty | `assets/sfx/empty.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: mission_done | mission_done | `assets/sfx/mission_done.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: ui_click | ui_click | `assets/sfx/ui_click.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: ui_open | ui_open | `assets/sfx/ui_open.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: splash | splash | `assets/sfx/splash.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: sizzle | sizzle | `assets/sfx/sizzle.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: boss_roar | boss_roar | `assets/sfx/boss_roar.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: thunder_strike | thunder_strike | `assets/sfx/thunder_strike.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: gate | gate | `assets/sfx/gate.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: heal | heal | `assets/sfx/heal.wav` | generated placeholder (tools/gen_assets.py) |
+| Music loop: menu | menu | `assets/music/menu.wav` | generated placeholder (tools/gen_assets.py) |
+| Music loop: map | map | `assets/music/map.wav` | generated placeholder (tools/gen_assets.py) |
+| Music loop: calm | calm | `assets/music/calm.wav` | generated placeholder (tools/gen_assets.py) |
+| Music loop: norse | norse | `assets/music/norse.wav` | generated placeholder (tools/gen_assets.py) |
+| Music loop: kalevala | kalevala | `assets/music/kalevala.wav` | generated placeholder (tools/gen_assets.py) |
+| Music loop: dark | dark | `assets/music/dark.wav` | generated placeholder (tools/gen_assets.py) |
+| Music loop: boss | boss | `assets/music/boss.wav` | generated placeholder (tools/gen_assets.py) |
 | Player 1 sheet (blue scarf) | player1 | `assets/sprites/player1.png` | generated placeholder (tools/gen_assets.py) |
 | Player 2 sheet (red scarf, splitscreen) | player2 | `assets/sprites/player2.png` | generated placeholder (tools/gen_assets.py) |
 | Enemy: draugr | enemy_draugr | `assets/sprites/enemy_draugr.png` | generated placeholder (tools/gen_assets.py) |
@@ -99,53 +146,7 @@ Regenerate everything: `python3 tools/gen_assets.py` (overwrites!).  Machine lis
 | Projectile sprite: grenade | proj_grenade | `assets/ui/proj_grenade.png` | generated placeholder (tools/gen_assets.py) |
 | Projectile sprite: bullet | proj_bullet | `assets/ui/proj_bullet.png` | generated placeholder (tools/gen_assets.py) |
 | Projectile sprite: particle | proj_particle | `assets/ui/proj_particle.png` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_pistol | shot_pistol | `assets/sfx/shot_pistol.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_revolver | shot_revolver | `assets/sfx/shot_revolver.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_smg | shot_smg | `assets/sfx/shot_smg.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_rifle | shot_rifle | `assets/sfx/shot_rifle.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_shotgun | shot_shotgun | `assets/sfx/shot_shotgun.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_sniper | shot_sniper | `assets/sfx/shot_sniper.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_minigun | shot_minigun | `assets/sfx/shot_minigun.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_flame | shot_flame | `assets/sfx/shot_flame.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_ice | shot_ice | `assets/sfx/shot_ice.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_acid | shot_acid | `assets/sfx/shot_acid.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_thunder | shot_thunder | `assets/sfx/shot_thunder.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_rail | shot_rail | `assets/sfx/shot_rail.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_rocket | shot_rocket | `assets/sfx/shot_rocket.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_grenade | shot_grenade | `assets/sfx/shot_grenade.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_powder | shot_powder | `assets/sfx/shot_powder.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_trick | shot_trick | `assets/sfx/shot_trick.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: melee | melee | `assets/sfx/melee.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: explosion | explosion | `assets/sfx/explosion.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: explosion_big | explosion_big | `assets/sfx/explosion_big.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: hit_flesh | hit_flesh | `assets/sfx/hit_flesh.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: hit_wall | hit_wall | `assets/sfx/hit_wall.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: hurt | hurt | `assets/sfx/hurt.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: die | die | `assets/sfx/die.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: jump | jump | `assets/sfx/jump.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: land | land | `assets/sfx/land.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: step | step | `assets/sfx/step.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: jet | jet | `assets/sfx/jet.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: pickup | pickup | `assets/sfx/pickup.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: pickup_weapon | pickup_weapon | `assets/sfx/pickup_weapon.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: reload | reload | `assets/sfx/reload.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: empty | empty | `assets/sfx/empty.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: mission_done | mission_done | `assets/sfx/mission_done.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: ui_click | ui_click | `assets/sfx/ui_click.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: ui_open | ui_open | `assets/sfx/ui_open.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: splash | splash | `assets/sfx/splash.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: sizzle | sizzle | `assets/sfx/sizzle.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: boss_roar | boss_roar | `assets/sfx/boss_roar.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: thunder_strike | thunder_strike | `assets/sfx/thunder_strike.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: gate | gate | `assets/sfx/gate.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: heal | heal | `assets/sfx/heal.wav` | generated placeholder (tools/gen_assets.py) |
-| Music loop: menu | menu | `assets/music/menu.wav` | generated placeholder (tools/gen_assets.py) |
-| Music loop: map | map | `assets/music/map.wav` | generated placeholder (tools/gen_assets.py) |
-| Music loop: calm | calm | `assets/music/calm.wav` | generated placeholder (tools/gen_assets.py) |
-| Music loop: norse | norse | `assets/music/norse.wav` | generated placeholder (tools/gen_assets.py) |
-| Music loop: kalevala | kalevala | `assets/music/kalevala.wav` | generated placeholder (tools/gen_assets.py) |
-| Music loop: dark | dark | `assets/music/dark.wav` | generated placeholder (tools/gen_assets.py) |
-| Music loop: boss | boss | `assets/music/boss.wav` | generated placeholder (tools/gen_assets.py) |
+| Element colour overrides (optional) | elements | `assets/data/elements.txt` | generated by `nordsoldpow --dump-docs` |
 
 ## Details & how to replace
 

@@ -41,6 +41,7 @@ pub struct Player {
     pub step_t: u32,
     pub score: i32,
     pub slow_t: u32,
+    pub since_hit: u32,
 }
 
 pub const MAX_SLOTS: usize = 8;
@@ -50,7 +51,7 @@ pub const BODY_H: f32 = 20.0;
 impl Player {
     pub fn new(id: usize, x: f32, y: f32) -> Self {
         Player { id, body: Body::new(x, y, BODY_W, BODY_H), hp: 100.0, max_hp: 100.0, fuel: 100.0, slots: Vec::new(), cur: 1, aim: 0.0, aim_rel: 0.0, cd: 0, reload_t: 0, nades: 3, dead_t: 0, alive: true, burn: 0,
-            anim: 0.0, kills: 0, deaths: 0, hurt_t: 0, ctl: Controls::default(), jetting: false, invuln: 90, step_t: 0, score: 0, slow_t: 0 }
+            anim: 0.0, kills: 0, deaths: 0, hurt_t: 0, ctl: Controls::default(), jetting: false, invuln: 90, step_t: 0, score: 0, slow_t: 0, since_hit: 0 }
     }
     pub fn weapon(&self) -> &'static WeaponDef { &WEAPONS[self.slots[self.cur.min(self.slots.len() - 1)].w] }
     pub fn slot(&self) -> &Slot { &self.slots[self.cur.min(self.slots.len() - 1)] }

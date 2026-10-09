@@ -1,5 +1,428 @@
 [
  {
+  "use": "SFX: shot_pistol",
+  "name": "shot_pistol",
+  "path": "assets/sfx/shot_pistol.wav",
+  "kind": "sfx",
+  "size": "0.16s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_revolver",
+  "name": "shot_revolver",
+  "path": "assets/sfx/shot_revolver.wav",
+  "kind": "sfx",
+  "size": "0.30s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_smg",
+  "name": "shot_smg",
+  "path": "assets/sfx/shot_smg.wav",
+  "kind": "sfx",
+  "size": "0.10s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_rifle",
+  "name": "shot_rifle",
+  "path": "assets/sfx/shot_rifle.wav",
+  "kind": "sfx",
+  "size": "0.20s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_shotgun",
+  "name": "shot_shotgun",
+  "path": "assets/sfx/shot_shotgun.wav",
+  "kind": "sfx",
+  "size": "0.35s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_sniper",
+  "name": "shot_sniper",
+  "path": "assets/sfx/shot_sniper.wav",
+  "kind": "sfx",
+  "size": "0.50s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_minigun",
+  "name": "shot_minigun",
+  "path": "assets/sfx/shot_minigun.wav",
+  "kind": "sfx",
+  "size": "0.07s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_flame",
+  "name": "shot_flame",
+  "path": "assets/sfx/shot_flame.wav",
+  "kind": "sfx",
+  "size": "0.25s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_ice",
+  "name": "shot_ice",
+  "path": "assets/sfx/shot_ice.wav",
+  "kind": "sfx",
+  "size": "0.30s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_acid",
+  "name": "shot_acid",
+  "path": "assets/sfx/shot_acid.wav",
+  "kind": "sfx",
+  "size": "0.25s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_thunder",
+  "name": "shot_thunder",
+  "path": "assets/sfx/shot_thunder.wav",
+  "kind": "sfx",
+  "size": "0.35s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_rail",
+  "name": "shot_rail",
+  "path": "assets/sfx/shot_rail.wav",
+  "kind": "sfx",
+  "size": "0.45s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_rocket",
+  "name": "shot_rocket",
+  "path": "assets/sfx/shot_rocket.wav",
+  "kind": "sfx",
+  "size": "0.50s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_grenade",
+  "name": "shot_grenade",
+  "path": "assets/sfx/shot_grenade.wav",
+  "kind": "sfx",
+  "size": "0.22s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_powder",
+  "name": "shot_powder",
+  "path": "assets/sfx/shot_powder.wav",
+  "kind": "sfx",
+  "size": "0.18s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_trick",
+  "name": "shot_trick",
+  "path": "assets/sfx/shot_trick.wav",
+  "kind": "sfx",
+  "size": "0.20s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: melee",
+  "name": "melee",
+  "path": "assets/sfx/melee.wav",
+  "kind": "sfx",
+  "size": "0.14s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: explosion",
+  "name": "explosion",
+  "path": "assets/sfx/explosion.wav",
+  "kind": "sfx",
+  "size": "0.80s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: explosion_big",
+  "name": "explosion_big",
+  "path": "assets/sfx/explosion_big.wav",
+  "kind": "sfx",
+  "size": "1.60s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: hit_flesh",
+  "name": "hit_flesh",
+  "path": "assets/sfx/hit_flesh.wav",
+  "kind": "sfx",
+  "size": "0.12s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: hit_wall",
+  "name": "hit_wall",
+  "path": "assets/sfx/hit_wall.wav",
+  "kind": "sfx",
+  "size": "0.08s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: hurt",
+  "name": "hurt",
+  "path": "assets/sfx/hurt.wav",
+  "kind": "sfx",
+  "size": "0.22s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: die",
+  "name": "die",
+  "path": "assets/sfx/die.wav",
+  "kind": "sfx",
+  "size": "0.70s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: jump",
+  "name": "jump",
+  "path": "assets/sfx/jump.wav",
+  "kind": "sfx",
+  "size": "0.14s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: land",
+  "name": "land",
+  "path": "assets/sfx/land.wav",
+  "kind": "sfx",
+  "size": "0.12s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: step",
+  "name": "step",
+  "path": "assets/sfx/step.wav",
+  "kind": "sfx",
+  "size": "0.06s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: jet",
+  "name": "jet",
+  "path": "assets/sfx/jet.wav",
+  "kind": "sfx",
+  "size": "0.30s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: pickup",
+  "name": "pickup",
+  "path": "assets/sfx/pickup.wav",
+  "kind": "sfx",
+  "size": "0.15s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: pickup_weapon",
+  "name": "pickup_weapon",
+  "path": "assets/sfx/pickup_weapon.wav",
+  "kind": "sfx",
+  "size": "0.28s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: reload",
+  "name": "reload",
+  "path": "assets/sfx/reload.wav",
+  "kind": "sfx",
+  "size": "0.19s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: empty",
+  "name": "empty",
+  "path": "assets/sfx/empty.wav",
+  "kind": "sfx",
+  "size": "0.03s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: mission_done",
+  "name": "mission_done",
+  "path": "assets/sfx/mission_done.wav",
+  "kind": "sfx",
+  "size": "0.64s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: ui_click",
+  "name": "ui_click",
+  "path": "assets/sfx/ui_click.wav",
+  "kind": "sfx",
+  "size": "0.04s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: ui_open",
+  "name": "ui_open",
+  "path": "assets/sfx/ui_open.wav",
+  "kind": "sfx",
+  "size": "0.12s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: splash",
+  "name": "splash",
+  "path": "assets/sfx/splash.wav",
+  "kind": "sfx",
+  "size": "0.30s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: sizzle",
+  "name": "sizzle",
+  "path": "assets/sfx/sizzle.wav",
+  "kind": "sfx",
+  "size": "0.35s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: boss_roar",
+  "name": "boss_roar",
+  "path": "assets/sfx/boss_roar.wav",
+  "kind": "sfx",
+  "size": "1.40s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: thunder_strike",
+  "name": "thunder_strike",
+  "path": "assets/sfx/thunder_strike.wav",
+  "kind": "sfx",
+  "size": "1.50s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: gate",
+  "name": "gate",
+  "path": "assets/sfx/gate.wav",
+  "kind": "sfx",
+  "size": "1.20s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: heal",
+  "name": "heal",
+  "path": "assets/sfx/heal.wav",
+  "kind": "sfx",
+  "size": "0.36s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Music loop: menu",
+  "name": "menu",
+  "path": "assets/music/menu.wav",
+  "kind": "music",
+  "size": "25s 22.05kHz mono WAV, loops seamlessly",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Music loop: map",
+  "name": "map",
+  "path": "assets/music/map.wav",
+  "kind": "music",
+  "size": "26s 22.05kHz mono WAV, loops seamlessly",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Music loop: calm",
+  "name": "calm",
+  "path": "assets/music/calm.wav",
+  "kind": "music",
+  "size": "22s 22.05kHz mono WAV, loops seamlessly",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Music loop: norse",
+  "name": "norse",
+  "path": "assets/music/norse.wav",
+  "kind": "music",
+  "size": "26s 22.05kHz mono WAV, loops seamlessly",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Music loop: kalevala",
+  "name": "kalevala",
+  "path": "assets/music/kalevala.wav",
+  "kind": "music",
+  "size": "29s 22.05kHz mono WAV, loops seamlessly",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Music loop: dark",
+  "name": "dark",
+  "path": "assets/music/dark.wav",
+  "kind": "music",
+  "size": "30s 22.05kHz mono WAV, loops seamlessly",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Music loop: boss",
+  "name": "boss",
+  "path": "assets/music/boss.wav",
+  "kind": "music",
+  "size": "22s 22.05kHz mono WAV, loops seamlessly",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
   "use": "Player 1 sheet (blue scarf)",
   "name": "player1",
   "path": "assets/sprites/player1.png",
@@ -806,429 +1229,6 @@
   "path": "assets/ui/proj_particle.png",
   "kind": "sprite",
   "size": "3x3 PNG",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_pistol",
-  "name": "shot_pistol",
-  "path": "assets/sfx/shot_pistol.wav",
-  "kind": "sfx",
-  "size": "0.16s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_revolver",
-  "name": "shot_revolver",
-  "path": "assets/sfx/shot_revolver.wav",
-  "kind": "sfx",
-  "size": "0.30s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_smg",
-  "name": "shot_smg",
-  "path": "assets/sfx/shot_smg.wav",
-  "kind": "sfx",
-  "size": "0.10s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_rifle",
-  "name": "shot_rifle",
-  "path": "assets/sfx/shot_rifle.wav",
-  "kind": "sfx",
-  "size": "0.20s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_shotgun",
-  "name": "shot_shotgun",
-  "path": "assets/sfx/shot_shotgun.wav",
-  "kind": "sfx",
-  "size": "0.35s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_sniper",
-  "name": "shot_sniper",
-  "path": "assets/sfx/shot_sniper.wav",
-  "kind": "sfx",
-  "size": "0.50s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_minigun",
-  "name": "shot_minigun",
-  "path": "assets/sfx/shot_minigun.wav",
-  "kind": "sfx",
-  "size": "0.07s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_flame",
-  "name": "shot_flame",
-  "path": "assets/sfx/shot_flame.wav",
-  "kind": "sfx",
-  "size": "0.25s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_ice",
-  "name": "shot_ice",
-  "path": "assets/sfx/shot_ice.wav",
-  "kind": "sfx",
-  "size": "0.30s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_acid",
-  "name": "shot_acid",
-  "path": "assets/sfx/shot_acid.wav",
-  "kind": "sfx",
-  "size": "0.25s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_thunder",
-  "name": "shot_thunder",
-  "path": "assets/sfx/shot_thunder.wav",
-  "kind": "sfx",
-  "size": "0.35s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_rail",
-  "name": "shot_rail",
-  "path": "assets/sfx/shot_rail.wav",
-  "kind": "sfx",
-  "size": "0.45s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_rocket",
-  "name": "shot_rocket",
-  "path": "assets/sfx/shot_rocket.wav",
-  "kind": "sfx",
-  "size": "0.50s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_grenade",
-  "name": "shot_grenade",
-  "path": "assets/sfx/shot_grenade.wav",
-  "kind": "sfx",
-  "size": "0.22s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_powder",
-  "name": "shot_powder",
-  "path": "assets/sfx/shot_powder.wav",
-  "kind": "sfx",
-  "size": "0.18s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: shot_trick",
-  "name": "shot_trick",
-  "path": "assets/sfx/shot_trick.wav",
-  "kind": "sfx",
-  "size": "0.20s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: melee",
-  "name": "melee",
-  "path": "assets/sfx/melee.wav",
-  "kind": "sfx",
-  "size": "0.14s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: explosion",
-  "name": "explosion",
-  "path": "assets/sfx/explosion.wav",
-  "kind": "sfx",
-  "size": "0.80s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: explosion_big",
-  "name": "explosion_big",
-  "path": "assets/sfx/explosion_big.wav",
-  "kind": "sfx",
-  "size": "1.60s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: hit_flesh",
-  "name": "hit_flesh",
-  "path": "assets/sfx/hit_flesh.wav",
-  "kind": "sfx",
-  "size": "0.12s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: hit_wall",
-  "name": "hit_wall",
-  "path": "assets/sfx/hit_wall.wav",
-  "kind": "sfx",
-  "size": "0.08s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: hurt",
-  "name": "hurt",
-  "path": "assets/sfx/hurt.wav",
-  "kind": "sfx",
-  "size": "0.22s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: die",
-  "name": "die",
-  "path": "assets/sfx/die.wav",
-  "kind": "sfx",
-  "size": "0.70s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: jump",
-  "name": "jump",
-  "path": "assets/sfx/jump.wav",
-  "kind": "sfx",
-  "size": "0.14s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: land",
-  "name": "land",
-  "path": "assets/sfx/land.wav",
-  "kind": "sfx",
-  "size": "0.12s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: step",
-  "name": "step",
-  "path": "assets/sfx/step.wav",
-  "kind": "sfx",
-  "size": "0.06s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: jet",
-  "name": "jet",
-  "path": "assets/sfx/jet.wav",
-  "kind": "sfx",
-  "size": "0.30s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: pickup",
-  "name": "pickup",
-  "path": "assets/sfx/pickup.wav",
-  "kind": "sfx",
-  "size": "0.15s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: pickup_weapon",
-  "name": "pickup_weapon",
-  "path": "assets/sfx/pickup_weapon.wav",
-  "kind": "sfx",
-  "size": "0.28s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: reload",
-  "name": "reload",
-  "path": "assets/sfx/reload.wav",
-  "kind": "sfx",
-  "size": "0.19s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: empty",
-  "name": "empty",
-  "path": "assets/sfx/empty.wav",
-  "kind": "sfx",
-  "size": "0.03s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: mission_done",
-  "name": "mission_done",
-  "path": "assets/sfx/mission_done.wav",
-  "kind": "sfx",
-  "size": "0.64s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: ui_click",
-  "name": "ui_click",
-  "path": "assets/sfx/ui_click.wav",
-  "kind": "sfx",
-  "size": "0.04s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: ui_open",
-  "name": "ui_open",
-  "path": "assets/sfx/ui_open.wav",
-  "kind": "sfx",
-  "size": "0.12s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: splash",
-  "name": "splash",
-  "path": "assets/sfx/splash.wav",
-  "kind": "sfx",
-  "size": "0.30s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: sizzle",
-  "name": "sizzle",
-  "path": "assets/sfx/sizzle.wav",
-  "kind": "sfx",
-  "size": "0.35s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: boss_roar",
-  "name": "boss_roar",
-  "path": "assets/sfx/boss_roar.wav",
-  "kind": "sfx",
-  "size": "1.40s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: thunder_strike",
-  "name": "thunder_strike",
-  "path": "assets/sfx/thunder_strike.wav",
-  "kind": "sfx",
-  "size": "1.50s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: gate",
-  "name": "gate",
-  "path": "assets/sfx/gate.wav",
-  "kind": "sfx",
-  "size": "1.20s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "SFX: heal",
-  "name": "heal",
-  "path": "assets/sfx/heal.wav",
-  "kind": "sfx",
-  "size": "0.36s 22.05kHz mono WAV",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "Music loop: menu",
-  "name": "menu",
-  "path": "assets/music/menu.wav",
-  "kind": "music",
-  "size": "25s 22.05kHz mono WAV, loops seamlessly",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "Music loop: map",
-  "name": "map",
-  "path": "assets/music/map.wav",
-  "kind": "music",
-  "size": "26s 22.05kHz mono WAV, loops seamlessly",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "Music loop: calm",
-  "name": "calm",
-  "path": "assets/music/calm.wav",
-  "kind": "music",
-  "size": "22s 22.05kHz mono WAV, loops seamlessly",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "Music loop: norse",
-  "name": "norse",
-  "path": "assets/music/norse.wav",
-  "kind": "music",
-  "size": "26s 22.05kHz mono WAV, loops seamlessly",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "Music loop: kalevala",
-  "name": "kalevala",
-  "path": "assets/music/kalevala.wav",
-  "kind": "music",
-  "size": "29s 22.05kHz mono WAV, loops seamlessly",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "Music loop: dark",
-  "name": "dark",
-  "path": "assets/music/dark.wav",
-  "kind": "music",
-  "size": "30s 22.05kHz mono WAV, loops seamlessly",
-  "source": "generated placeholder (tools/gen_assets.py)",
-  "note": ""
- },
- {
-  "use": "Music loop: boss",
-  "name": "boss",
-  "path": "assets/music/boss.wav",
-  "kind": "music",
-  "size": "22s 22.05kHz mono WAV, loops seamlessly",
   "source": "generated placeholder (tools/gen_assets.py)",
   "note": ""
  }

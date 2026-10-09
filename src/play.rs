@@ -26,6 +26,7 @@ impl Game {
         let ghost = self.cheats.ghost && pi == 0;
         {
             let p = &mut self.players[pi];
+            p.since_hit += 1; if p.since_hit > 360 && p.hp < p.max_hp { p.hp = (p.hp + 0.03).min(p.max_hp); }
             p.cd = p.cd.saturating_sub(1); p.invuln = p.invuln.saturating_sub(1); p.hurt_t = p.hurt_t.saturating_sub(1);
             if p.slow_t > 0 { p.slow_t -= 1; }
             // aim

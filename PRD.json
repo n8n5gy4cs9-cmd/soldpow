@@ -192,7 +192,7 @@
    "title": "macOS .app bundle script (tools/bundle_macos.sh) + Win/Linux build notes",
    "files": "tools/",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -201,7 +201,7 @@
    "title": "GitHub Actions CI building mac/win/linux",
    "files": ".github/workflows",
    "optional": true,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -867,7 +867,7 @@
    "title": "README with controls + build instructions",
    "files": "README.md",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {

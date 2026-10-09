@@ -1,6 +1,6 @@
 """Pixel-art placeholder generator (Starbound-ish chunky style). Part of tools/gen_assets.py.
 Everything here is procedural so it can be regenerated; replace the PNGs in assets/ with real art any time."""
-import math, random
+import math, random, zlib
 from PIL import Image, ImageDraw
 
 OUT = (14, 10, 22, 255)
@@ -237,7 +237,7 @@ WEAPON_KEYS = ['puukko', 'hugin', 'munin', 'lemminkainen_smg', 'vainamoinen_gun'
 
 # ------------------------------------------------------------------ planets
 def planet_img(name, base, accent, kind, size=64):
-    rnd = random.Random(hash(name) & 0xffff); im = canvas(size, size); px = im.load(); c = size / 2 - 3
+    rnd = random.Random(zlib.crc32(name.encode())); im = canvas(size, size); px = im.load(); c = size / 2 - 3
     ph = [rnd.random() * 6 for _ in range(4)]
     for y in range(size):
         for x in range(size):

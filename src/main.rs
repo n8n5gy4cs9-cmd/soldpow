@@ -13,7 +13,9 @@ async fn main() {
     let args: Vec<String> = std::env::args().collect();
     let flag = |f: &str| args.iter().any(|a| a == f);
     let val = |f: &str| args.iter().position(|a| a == f).and_then(|i| args.get(i + 1)).cloned();
+    if flag("--dump-docs") { dump_docs(); return; }
     if flag("--help") { println!("nordSoldPow options: --nosound  --planet <id>  --mode campaign|sandbox|versus  --split  --console \"cmd; cmd\"  --shot <file.png>  --frames <n>  --selftest"); return; }
+    if flag("--selftest") { std::env::set_var("NORDSOLDPOW_SAVE", std::env::temp_dir().join("nordsoldpow_selftest_save.txt")); }
     macroquad::rand::srand(macroquad::miniquad::date::now() as u64);
     let sound = !flag("--nosound");
     let assets = assets::Assets::load(sound).await;
@@ -25,6 +27,7 @@ async fn main() {
         if let Some(pi) = planets::by_id(&id) { game.save.intro_seen = true; game.land(pi, mode, flag("--split") || mode == game::Mode::Versus); }
         if let Some(cmds) = val("--console") { for c in cmds.split(';') { game.exec(c.trim()); } game.console.open = false; }
     }
+    match val("--ui").as_deref() { Some("journal") => game.ui.journal = true, Some("cheats") => game.ui.cheat_menu = true, Some("console") => { game.console.open = true; game.exec("help"); game.exec("give vainamoinen_gun"); } Some("picker") => { game.ui.picker = true; game.brush.build = true; } Some("pause") => game.ui.paused = true, _ => {} }
     match val("--scene").as_deref() { Some("map") => { game.ui.free_pick = true; game.scene = game::Scene::Map; } Some("settings") => game.scene = game::Scene::Settings, Some("controls") => game.scene = game::Scene::Controls, Some("credits") => game.scene = game::Scene::Credits, _ => {} }
     let shot = val("--shot"); let frames: u32 = val("--frames").and_then(|s| s.parse().ok()).unwrap_or(0);
     let mut n = 0u32;
@@ -41,9 +44,14 @@ fn selftest(game: &mut game::Game) {
     use game::*;
     for pi in 0..planets::PLANETS.len() {
         game.land(pi, Mode::Campaign, true);
+        let t0 = std::time::Instant::now();
         for k in 0..600 { game.tick(); if k == 100 { game.exec("spawn draugr 5"); } }
+        let ms = t0.elapsed().as_secs_f64() * 1000.0 / 600.0;
+        print!("[{:.2} ms/tick] ", ms);
         println!("{:<13} spawn={:?} enemies={} players_alive={} cells_nonempty={}", planets::PLANETS[pi].id, game.gen.spawn, game.enemies.len(), game.alive_players().len(), game.world.cells.iter().filter(|c| c.el != 0).count());
     }
+    // idle-survival diagnostics
+    for pi in [0usize, 2, 3] { game.land(pi, Mode::Campaign, false); game.enemies.clear(); let mut min_hp = 100.0f32; for _ in 0..900 { game.tick(); min_hp = min_hp.min(game.players[0].hp); } println!("idle no-enemies {}: min hp {:.1}", planets::PLANETS[pi].id, min_hp); }
     // combat test: shoot a draugr with the rifle
     game.land(0, Mode::Campaign, false);
     game.exec("give vainamoinen_gun");
@@ -60,7 +68,50 @@ fn selftest(game: &mut game::Game) {
     }
     println!("combat: kills {} -> {}  enemies {}", before, game.kills, game.enemies.len());
     assert!(game.kills > before, "rifle failed to kill a draugr");
-    // powder interaction: bullets ignite, explosions carve
+    // powder interaction: explosions carve
     game.exec("boom 14");
+    // ---- mission chain on Midgard
+    game.land(0, Mode::Campaign, false); game.enemies.clear(); game.save.completed.clear(); game.init_missions();
+    game.cheats.god = true;
+    let goal = game.gen.zone("goal").unwrap().clone(); { let b = &mut game.players[0].body; b.x = goal.center().0; b.y = goal.y1 as f32 - 2.0; }
+    for _ in 0..5 { game.tick(); }
+    assert!(game.runs[0].done, "m1 reach");
+    let basin = game.gen.zone("basin").unwrap().clone();
+    for y in basin.y0 + 4..basin.y1 { for x in basin.x0..basin.x1 { if game.world.get(x, y) == elements::EMPTY { game.world.set(x, y, elements::WATER); } } }
+    for _ in 0..60 { game.tick(); }
+    assert!(game.runs[1].done, "m2 fill (progress {})", game.runs[1].progress);
+    let arena = game.gen.zone("arena").unwrap().clone(); { let b = &mut game.players[0].body; b.x = arena.center().0 - 10.0; b.y = arena.y1 as f32 - 2.0; }
+    for _ in 0..30 { game.tick(); }
+    assert!(game.boss_spawned && game.enemies.iter().any(|e| enemy::is_boss(e.def)), "boss spawn");
+    for k in 0..900 { let p = &mut game.players[0]; if p.hp < 50.0 { p.hp = 100.0; } game.exec(if k == 5 { "killall" } else { "echo" }); game.tick(); if game.runs[2].done { break; } }
+    assert!(game.runs[2].done, "m3 boss");
+    assert_eq!(game.save.shards, 1);
+    println!("missions: midgard chain OK (shards {}, silver {})", game.save.shards, game.save.silver);
+    // ---- burn mission on Muspell
+    game.land(2, Mode::Campaign, false); game.enemies.clear(); game.save.completed.clear(); game.init_missions(); game.cheats.god = true;
+    let nest = game.gen.zone("nest").unwrap().clone(); println!("nest fuel {}", nest.initial);
+    for y in nest.y0..=nest.y1 { for x in nest.x0..=nest.x1 { let e = game.world.get(x, y); if e == elements::WOOD || e == elements::PLANT { game.world.ignite(x, y); } } }
+    game.runs[0].done = true; game.runs[0].progress = 1;
+    for _ in 0..1500 { game.tick(); if game.runs[1].done { break; } }
+    assert!(game.runs[1].done, "burn mission (progress {})", game.runs[1].progress);
+    println!("missions: burn OK");
     println!("selftest OK");
+}
+
+/// Writes assets/data/elements.txt (editable colour overrides) and docs/MISSIONS.md.
+fn dump_docs() {
+    let mut e = String::from("# element colour overrides: key r g b  (edit and restart; delete a line to use the built-in colour)\n");
+    for d in elements::ELEMENTS.iter().skip(1) { e.push_str(&format!("{} {} {} {}\n", d.key, d.color.0, d.color.1, d.color.2)); }
+    let _ = std::fs::create_dir_all("assets/data"); std::fs::write("assets/data/elements.txt", e).unwrap();
+    let mut m = String::from("# nordSoldPow - Mission list (generated by `--dump-docs`)\n\nMain chain: m1 -> m2 -> m3 (m3 completion recovers a Sampo shard). Optional missions (o1, o2) are always available.\n");
+    for p in planets::PLANETS.iter() {
+        m.push_str(&format!("\n## {} ({}) - {}\n\nGravity {:.2}g, hazard {:?}, boss: {}.  Enemies: {}\n\n| id | title | objective | reward |\n|---|---|---|---|\n", p.name, p.analog, planets::system_name(p.system), p.gravity, p.hazard, p.boss.unwrap_or("none"), p.enemies.join(", ")));
+        for i in missions::for_planet(p.id) { let x = &missions::MISSIONS[i]; m.push_str(&format!("| `{}` | {}{} | {} | {} silver{} |\n", x.id, x.title, if x.optional { " *(optional)*" } else { "" }, missions::describe(&x.obj), x.silver, x.weapon.map(|w| format!(", weapon `{}`", w)).unwrap_or_default())); }
+    }
+    m.push_str("\n## Weapons\n\n| key | name | type | dmg | tier |\n|---|---|---|---|---|\n");
+    for w in weapons::WEAPONS.iter() { m.push_str(&format!("| `{}` | {} | {:?} | {} | {} |\n", w.key, w.name, w.fire, w.dmg, w.tier)); }
+    m.push_str("\n## Enemies\n\n| key | name | hp | ai |\n|---|---|---|---|\n");
+    for en in enemy::ENEMIES.iter() { m.push_str(&format!("| `{}` | {} | {} | {:?} |\n", en.key, en.name, en.hp, en.ai)); }
+    std::fs::write("docs/MISSIONS.md", m).unwrap();
+    println!("wrote assets/data/elements.txt and docs/MISSIONS.md");
 }

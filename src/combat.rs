@@ -306,7 +306,7 @@ impl Game {
         if !self.players[pi].alive || self.players[pi].invuln > 0 || dmg <= 0.0 { return; }
         if self.cheats.god && (pi == 0 || self.players.len() == 1) { return; }
         let (x, y) = self.players[pi].body.center();
-        self.players[pi].hp -= dmg; self.players[pi].hurt_t = 8;
+        self.players[pi].hp -= dmg; self.players[pi].hurt_t = 8; self.players[pi].since_hit = 0;
         if dmg > 1.5 { self.blood(x, y, 2, dir); if self.tick % 6 == 0 { self.sfx_at("hurt", x, y); } }
         if self.players[pi].hp <= 0.0 { self.kill_player(pi, by); }
     }

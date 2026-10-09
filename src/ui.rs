@@ -11,7 +11,7 @@ pub const COL_GOLD: Color = Color::new(1.0, 0.84, 0.0, 1.0);
 pub fn text(s: &str, x: f32, y: f32, size: f32, col: Color) { draw_text(s, x + 1.0, y + 1.0, size, Color::new(0.0, 0.0, 0.0, 0.8 * col.a)); draw_text(s, x, y, size, col); }
 pub fn text_w(s: &str, size: f32) -> f32 { measure_text(s, None, size as u16, 1.0).width }
 pub fn text_c(s: &str, cx: f32, y: f32, size: f32, col: Color) { text(s, cx - text_w(s, size) / 2.0, y, size, col); }
-pub fn panel(x: f32, y: f32, w: f32, h: f32) { draw_rectangle(x, y, w, h, Color::new(0.05, 0.05, 0.1, 0.85)); draw_rectangle_lines(x, y, w, h, 2.0, Color::new(0.6, 0.5, 0.25, 1.0)); }
+pub fn panel(x: f32, y: f32, w: f32, h: f32) { draw_rectangle(x, y, w, h, Color::new(0.04, 0.04, 0.09, 0.94)); draw_rectangle_lines(x, y, w, h, 2.0, Color::new(0.6, 0.5, 0.25, 1.0)); }
 pub fn inside(x: f32, y: f32, w: f32, h: f32) -> bool { let (mx, my) = mouse_position(); mx >= x && mx <= x + w && my >= y && my <= y + h }
 /// Returns true when clicked this frame.
 pub fn button(x: f32, y: f32, w: f32, h: f32, label: &str) -> bool {
@@ -42,8 +42,9 @@ impl Game {
         bar(x + 30.0, y + 16.0, 180.0, 8.0, p.fuel / 100.0, Color::new(1.0, 0.7, 0.2, 1.0));
         let w = p.weapon(); let s = p.slot();
         let ammo = if w.mag == 0 { "inf".to_string() } else if p.reload_t > 0 { "reloading...".to_string() } else { format!("{}/{}", s.mag, s.reserve) };
-        text(w.name, x, y + 42.0, 17.0, WHITE);
-        text(&ammo, x + 150.0, y + 42.0, 17.0, if p.reload_t > 0 { YELLOW } else { Color::new(1.0, 0.9, 0.5, 1.0) });
+        let mut nm = w.name.to_string(); if nm.len() > 24 { nm.truncate(22); nm.push_str(".."); }
+        text(&nm, x, y + 40.0, 15.0, WHITE);
+        text(&ammo, x + 150.0, y + 40.0, 17.0, if p.reload_t > 0 { YELLOW } else { Color::new(1.0, 0.9, 0.5, 1.0) });
         text(&format!("Nades {}   Silver {}", p.nades, self.save.silver), x, y + 62.0, 15.0, LIGHTGRAY);
         // weapon slots
         for (i, sl) in p.slots.iter().enumerate() {

@@ -2,7 +2,7 @@
 
 _Generated from PRD.json by `python3 tools/task.py sync` - do not hand-edit; use `tools/task.py done <id>`._
 
-**Progress: 73/93 total | 73/80 required | updated 2026-10-09**
+**Progress: 76/93 total | 75/80 required | updated 2026-10-09**
 
 Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optional.
 
@@ -10,11 +10,11 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 
 ## NEXT UP
 
-- `1.5` macOS .app bundle script (tools/bundle_macos.sh) + Win/Linux build notes
 - `6.4` Spawners / waves (survive missions)
 - `7.6` Optional tasks tracker / journal screen
 - `13.1` Unit tests (sim rules, console parser, mission engine)
 - `13.2` Playtest headless smoke test (sim + frames)
+- `13.4` Final zip of repo + commit + push
 
 ## P0 Planning & docs  (8/8)
 
@@ -27,14 +27,14 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 - [x] `0.7` commands.txt (console commands list)
 - [x] `0.8` HANDOFF.md ("continue here" for next AI / next session)
 
-## P1 Project foundation  (4/6)
+## P1 Project foundation  (6/6)
 
 - [x] `1.1` Cargo project (macroquad), release profile tuned for M1 Max
 - [x] `1.2` Game state machine: Boot / Menu / SolarMap / Play / Pause / Story
 - [x] `1.3` Asset loader with graceful fallbacks (missing file => placeholder, never crash)
 - [x] `1.4` Settings + save file (progress, unlocks, silver, completed missions)
-- [ ] `1.5` macOS .app bundle script (tools/bundle_macos.sh) + Win/Linux build notes
-- [ ] `1.6` GitHub Actions CI building mac/win/linux *(opt)*
+- [x] `1.5` macOS .app bundle script (tools/bundle_macos.sh) + Win/Linux build notes
+- [x] `1.6` GitHub Actions CI building mac/win/linux *(opt)*
 
 ## P2 Asset generation (all placeholders, replaceable)  (10/10)
 
@@ -140,11 +140,11 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 - [ ] `12.4` Minimap *(opt)*
 - [x] `12.5` Credits screen: by Crowelian 2026 + Sonnet
 
-## P13 Polish + ship  (0/8)
+## P13 Polish + ship  (1/8)
 
 - [ ] `13.1` Unit tests (sim rules, console parser, mission engine)
 - [ ] `13.2` Playtest headless smoke test (sim + frames)
-- [ ] `13.3` README with controls + build instructions
+- [x] `13.3` README with controls + build instructions
 - [ ] `13.4` Final zip of repo + commit + push
 - [ ] `13.5` Windows + Linux verified builds *(opt)*
 - [ ] `13.6` Finnish/Norse font + localisation *(opt)*
