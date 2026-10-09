@@ -2,7 +2,7 @@
 
 _Generated from PRD.json by `python3 tools/task.py sync` - do not hand-edit; use `tools/task.py done <id>`._
 
-**Progress: 18/93 total | 18/80 required | updated 2026-10-09**
+**Progress: 29/93 total | 29/80 required | updated 2026-10-09**
 
 Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optional.
 
@@ -10,11 +10,11 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 
 ## NEXT UP
 
-- `1.1` Cargo project (macroquad), release profile tuned for M1 Max
 - `1.2` Game state machine: Boot / Menu / SolarMap / Play / Pause / Story
 - `1.3` Asset loader with graceful fallbacks (missing file => placeholder, never crash)
 - `1.4` Settings + save file (progress, unlocks, silver, completed missions)
 - `1.5` macOS .app bundle script (tools/bundle_macos.sh) + Win/Linux build notes
+- `3.10` Brush painting tool (sizes, erase, line interpolation) + build mode
 
 ## P0 Planning & docs  (8/8)
 
@@ -27,9 +27,9 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 - [x] `0.7` commands.txt (console commands list)
 - [x] `0.8` HANDOFF.md ("continue here" for next AI / next session)
 
-## P1 Project foundation  (0/6)
+## P1 Project foundation  (1/6)
 
-- [ ] `1.1` Cargo project (macroquad), release profile tuned for M1 Max
+- [x] `1.1` Cargo project (macroquad), release profile tuned for M1 Max
 - [ ] `1.2` Game state machine: Boot / Menu / SolarMap / Play / Pause / Story
 - [ ] `1.3` Asset loader with graceful fallbacks (missing file => placeholder, never crash)
 - [ ] `1.4` Settings + save file (progress, unlocks, silver, completed missions)
@@ -49,20 +49,20 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 - [x] `2.9` Placeholder music (synthesised kantele-style loops)
 - [x] `2.10` assets.md auto-generated from manifest (tools/gen_assets.py)
 
-## P3 Powder sim (Powder Toy side)  (0/15)
+## P3 Powder sim (Powder Toy side)  (10/15)
 
-- [ ] `3.1` Element table (id, name, console key, colour, density, flags)
-- [ ] `3.2` Grid world + double-buffer-free update with parity flag
-- [ ] `3.3` Powders: sand, dirt, salt, snow, ash, gunpowder, coal
-- [ ] `3.4` Liquids: water, oil, lava, acid, nitro, blood, mercury
-- [ ] `3.5` Gases + fire: smoke, steam, methane, fire
-- [ ] `3.6` Solids: wall, stone, wood, metal, glass, ice, plant, tnt, gold, rune
-- [ ] `3.7` Special: clone, void, spark/thunder
-- [ ] `3.8` Reactions (fire burns, water+lava, acid dissolves, ice melts, plant grows, sand+lava=glass)
-- [ ] `3.9` Explosions (radius, chain reactions, terrain throw)
+- [x] `3.1` Element table (id, name, console key, colour, density, flags)
+- [x] `3.2` Grid world + double-buffer-free update with parity flag
+- [x] `3.3` Powders: sand, dirt, salt, snow, ash, gunpowder, coal
+- [x] `3.4` Liquids: water, oil, lava, acid, nitro, blood, mercury
+- [x] `3.5` Gases + fire: smoke, steam, methane, fire
+- [x] `3.6` Solids: wall, stone, wood, metal, glass, ice, plant, tnt, gold, rune
+- [x] `3.7` Special: clone, void, spark/thunder
+- [x] `3.8` Reactions (fire burns, water+lava, acid dissolves, ice melts, plant grows, sand+lava=glass)
+- [x] `3.9` Explosions (radius, chain reactions, terrain throw)
 - [ ] `3.10` Brush painting tool (sizes, erase, line interpolation) + build mode
 - [ ] `3.11` Element picker UI (categories, hotkeys)
-- [ ] `3.12` Sim pause / step / speed
+- [x] `3.12` Sim pause / step / speed
 - [ ] `3.13` Sandbox save/load of world (png/bin) *(opt)*
 - [ ] `3.14` Temperature simulation (Powder Toy heat model) *(opt)*
 - [ ] `3.15` Electricity (spark/metal/battery) *(opt)*
