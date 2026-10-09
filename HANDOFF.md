@@ -15,7 +15,7 @@
 * Console commands live in ONE table in `src/console.rs`; keep `commands.txt` in sync (a unit test checks it).
 * Assets must be loaded at runtime from `assets/` with fallbacks; never `include_bytes!` art you want users to swap.
 * ASCII-only strings in the UI (default macroquad font). Accents only in docs.
-* No GitHub access to the reference repos in the original sandbox (403) - assets are generated, code is original.
+* Reference repos CAN be cloned in cloud sessions via the `add_repo` tool + `git clone --depth 1` (proxy serves public repos). Soldat's real assets: opensoldat/base (CC BY 4.0). `python3 tools/import_soldat.py <path-to-base>` imports SFX. Code stays original/MIT.
 
 ## Status log (newest first)
 * 2026-10-09: Planning docs complete (PRD.md, PRD.json, task.md, docs/PLAN.md, docs/LORE.md, commands.txt, HANDOFF.md). Next: P1 skeleton + P2 asset generator.

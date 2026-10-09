@@ -50,6 +50,26 @@ fn selftest(game: &mut game::Game) {
         print!("[{:.2} ms/tick] ", ms);
         println!("{:<13} spawn={:?} enemies={} players_alive={} cells_nonempty={}", planets::PLANETS[pi].id, game.gen.spawn, game.enemies.len(), game.alive_players().len(), game.world.cells.iter().filter(|c| c.el != 0).count());
     }
+    // bot playthrough on every planet: two bots run east, jump, jetpack and shoot
+    for pi in 0..planets::PLANETS.len() {
+        game.land(pi, Mode::Campaign, true); game.cheats.inf_ammo = true; game.exec("give vainamoinen_gun");
+        let (mut maxx, mut deaths0) = (0.0f32, 0);
+        let t0 = std::time::Instant::now();
+        for k in 0..4000u32 {
+            for i in 0..game.players.len() {
+                let target = game.enemies.iter().filter(|e| (e.body.x - game.players[i].body.x).abs() < 220.0).min_by(|a, b| (a.body.x - game.players[i].body.x).abs().partial_cmp(&(b.body.x - game.players[i].body.x).abs()).unwrap()).map(|e| e.body.center());
+                let p = &mut game.players[i]; let blocked = p.body.blocked;
+                p.ctl.right = target.is_none(); p.ctl.left = false; p.ctl.up = blocked || (k / 90) % 7 == 0; p.ctl.up_pressed = blocked && p.body.on_ground;
+                if let Some((tx, ty)) = target { p.ctl.fire = true; p.ctl.fire_pressed = k % 5 == 0; if i == 0 { p.ctl.aim_world = Some((tx, ty)); } else { p.aim_rel = 0.0; p.ctl.aim_world = Some((tx, ty)); } p.ctl.nade_pressed = k % 200 == 0; } else { p.ctl.fire = false; p.ctl.aim_world = Some((p.body.x + 50.0, p.body.y - 14.0)); }
+                p.ctl.reload = k % 400 == 0;
+            }
+            game.tick();
+            maxx = maxx.max(game.players[0].body.x);
+            if k % 1000 == 999 { for i in 0..game.players.len() { if !game.players[i].alive { deaths0 += 1; } } }
+        }
+        println!("bot {:<13} reached x={:>4.0}  kills={:<3} deaths={} bullets={} particles={} [{:.0} ms]", planets::PLANETS[pi].id, maxx, game.kills, game.players.iter().map(|p| p.deaths).sum::<u32>(), game.bullets.len(), game.particles.len(), t0.elapsed().as_millis());
+        let _ = deaths0;
+    }
     // idle-survival diagnostics
     for pi in [0usize, 2, 3] { game.land(pi, Mode::Campaign, false); game.enemies.clear(); let mut min_hp = 100.0f32; for _ in 0..900 { game.tick(); min_hp = min_hp.min(game.players[0].hp); } println!("idle no-enemies {}: min hp {:.1}", planets::PLANETS[pi].id, min_hp); }
     // combat test: shoot a draugr with the rifle
@@ -73,6 +93,7 @@ fn selftest(game: &mut game::Game) {
     // ---- mission chain on Midgard
     game.land(0, Mode::Campaign, false); game.enemies.clear(); game.save.completed.clear(); game.init_missions();
     game.cheats.god = true;
+    let shards0 = game.save.shards;
     let goal = game.gen.zone("goal").unwrap().clone(); { let b = &mut game.players[0].body; b.x = goal.center().0; b.y = goal.y1 as f32 - 2.0; }
     for _ in 0..5 { game.tick(); }
     assert!(game.runs[0].done, "m1 reach");
@@ -85,7 +106,7 @@ fn selftest(game: &mut game::Game) {
     assert!(game.boss_spawned && game.enemies.iter().any(|e| enemy::is_boss(e.def)), "boss spawn");
     for k in 0..900 { let p = &mut game.players[0]; if p.hp < 50.0 { p.hp = 100.0; } game.exec(if k == 5 { "killall" } else { "echo" }); game.tick(); if game.runs[2].done { break; } }
     assert!(game.runs[2].done, "m3 boss");
-    assert_eq!(game.save.shards, 1);
+    assert_eq!(game.save.shards, shards0 + 1);
     println!("missions: midgard chain OK (shards {}, silver {})", game.save.shards, game.save.silver);
     // ---- burn mission on Muspell
     game.land(2, Mode::Campaign, false); game.enemies.clear(); game.save.completed.clear(); game.init_missions(); game.cheats.god = true;

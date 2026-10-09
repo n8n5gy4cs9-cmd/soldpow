@@ -24,6 +24,7 @@ impl Game {
             Scene::Play => self.scene_play(dt),
         }
         self.update_ui_timers(dt);
+        if crate::ui::take_click() { self.sfx("ui_click"); }
     }
 
     fn on_scene_enter(&mut self) {
@@ -34,8 +35,9 @@ impl Game {
 
     // ------------------------------------------------------------------ play
     fn scene_play(&mut self, dt: f32) {
+        let was_open = self.console.open;
         self.handle_hotkeys();
-        self.update_console();
+        if was_open { self.update_console(); }
         let views = self.compute_views();
         self.gather_input(&views);
         if !self.ui.paused {

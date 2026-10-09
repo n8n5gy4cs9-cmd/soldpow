@@ -14,12 +14,14 @@ pub fn text_c(s: &str, cx: f32, y: f32, size: f32, col: Color) { text(s, cx - te
 pub fn panel(x: f32, y: f32, w: f32, h: f32) { draw_rectangle(x, y, w, h, Color::new(0.04, 0.04, 0.09, 0.94)); draw_rectangle_lines(x, y, w, h, 2.0, Color::new(0.6, 0.5, 0.25, 1.0)); }
 pub fn inside(x: f32, y: f32, w: f32, h: f32) -> bool { let (mx, my) = mouse_position(); mx >= x && mx <= x + w && my >= y && my <= y + h }
 /// Returns true when clicked this frame.
+static CLICKED: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(false);
+pub fn take_click() -> bool { CLICKED.swap(false, std::sync::atomic::Ordering::Relaxed) }
 pub fn button(x: f32, y: f32, w: f32, h: f32, label: &str) -> bool {
     let hov = inside(x, y, w, h);
     draw_rectangle(x, y, w, h, if hov { Color::new(0.35, 0.28, 0.12, 0.95) } else { Color::new(0.12, 0.12, 0.2, 0.92) });
     draw_rectangle_lines(x, y, w, h, 2.0, if hov { Color::new(1.0, 0.85, 0.4, 1.0) } else { Color::new(0.5, 0.45, 0.3, 1.0) });
     let fs = (h * 0.55).min(26.0); text_c(label, x + w / 2.0, y + h / 2.0 + fs * 0.3, fs, WHITE);
-    hov && is_mouse_button_pressed(MouseButton::Left)
+    let c = hov && is_mouse_button_pressed(MouseButton::Left); if c { CLICKED.store(true, std::sync::atomic::Ordering::Relaxed); } c
 }
 pub fn bar(x: f32, y: f32, w: f32, h: f32, frac: f32, col: Color) {
     draw_rectangle(x, y, w, h, Color::new(0.0, 0.0, 0.0, 0.6)); draw_rectangle(x + 1.0, y + 1.0, (w - 2.0) * frac.clamp(0.0, 1.0), h - 2.0, col); draw_rectangle_lines(x, y, w, h, 1.0, Color::new(1.0, 1.0, 1.0, 0.5));

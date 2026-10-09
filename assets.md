@@ -1,6 +1,6 @@
 # nordSoldPow - Assets
 
-All assets are **generated placeholders** (the original Soldat / Powder Toy repos could not be cloned in the build sandbox - GitHub returned HTTP 403).
+Most art and all music are **generated placeholders** (`tools/gen_assets.py`). **Sound effects marked `OpenSoldat base` are real Soldat sounds** (https://github.com/opensoldat/base, licence **CC BY 4.0** - attribution required, included here and in README/credits; converted to 16-bit 22.05 kHz mono). Soldat itself ships no music; The Powder Toy ships no sound or art assets (elements are just colours).
 Everything is loaded **at runtime** from `assets/`; replace a file (same path, same name) and restart. Missing files never crash the game (fallback shape / silence).
 Formats: sprites = PNG (RGBA, nearest-neighbour, 1 px = 1 world cell), audio = WAV or OGG (use the same file name; keep `.wav` unless you also edit `src/assets.rs` extension list - `.ogg` is tried first automatically).
 Regenerate everything: `python3 tools/gen_assets.py` (overwrites!).  Machine list: `assets/manifest.json`.
@@ -9,53 +9,6 @@ Regenerate everything: `python3 tools/gen_assets.py` (overwrites!).  Machine lis
 
 | Use | Name | Path | Source |
 |---|---|---|---|
-| SFX: shot_pistol | shot_pistol | `assets/sfx/shot_pistol.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_revolver | shot_revolver | `assets/sfx/shot_revolver.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_smg | shot_smg | `assets/sfx/shot_smg.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_rifle | shot_rifle | `assets/sfx/shot_rifle.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_shotgun | shot_shotgun | `assets/sfx/shot_shotgun.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_sniper | shot_sniper | `assets/sfx/shot_sniper.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_minigun | shot_minigun | `assets/sfx/shot_minigun.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_flame | shot_flame | `assets/sfx/shot_flame.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_ice | shot_ice | `assets/sfx/shot_ice.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_acid | shot_acid | `assets/sfx/shot_acid.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_thunder | shot_thunder | `assets/sfx/shot_thunder.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_rail | shot_rail | `assets/sfx/shot_rail.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_rocket | shot_rocket | `assets/sfx/shot_rocket.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_grenade | shot_grenade | `assets/sfx/shot_grenade.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_powder | shot_powder | `assets/sfx/shot_powder.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: shot_trick | shot_trick | `assets/sfx/shot_trick.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: melee | melee | `assets/sfx/melee.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: explosion | explosion | `assets/sfx/explosion.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: explosion_big | explosion_big | `assets/sfx/explosion_big.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: hit_flesh | hit_flesh | `assets/sfx/hit_flesh.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: hit_wall | hit_wall | `assets/sfx/hit_wall.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: hurt | hurt | `assets/sfx/hurt.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: die | die | `assets/sfx/die.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: jump | jump | `assets/sfx/jump.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: land | land | `assets/sfx/land.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: step | step | `assets/sfx/step.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: jet | jet | `assets/sfx/jet.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: pickup | pickup | `assets/sfx/pickup.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: pickup_weapon | pickup_weapon | `assets/sfx/pickup_weapon.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: reload | reload | `assets/sfx/reload.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: empty | empty | `assets/sfx/empty.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: mission_done | mission_done | `assets/sfx/mission_done.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: ui_click | ui_click | `assets/sfx/ui_click.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: ui_open | ui_open | `assets/sfx/ui_open.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: splash | splash | `assets/sfx/splash.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: sizzle | sizzle | `assets/sfx/sizzle.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: boss_roar | boss_roar | `assets/sfx/boss_roar.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: thunder_strike | thunder_strike | `assets/sfx/thunder_strike.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: gate | gate | `assets/sfx/gate.wav` | generated placeholder (tools/gen_assets.py) |
-| SFX: heal | heal | `assets/sfx/heal.wav` | generated placeholder (tools/gen_assets.py) |
-| Music loop: menu | menu | `assets/music/menu.wav` | generated placeholder (tools/gen_assets.py) |
-| Music loop: map | map | `assets/music/map.wav` | generated placeholder (tools/gen_assets.py) |
-| Music loop: calm | calm | `assets/music/calm.wav` | generated placeholder (tools/gen_assets.py) |
-| Music loop: norse | norse | `assets/music/norse.wav` | generated placeholder (tools/gen_assets.py) |
-| Music loop: kalevala | kalevala | `assets/music/kalevala.wav` | generated placeholder (tools/gen_assets.py) |
-| Music loop: dark | dark | `assets/music/dark.wav` | generated placeholder (tools/gen_assets.py) |
-| Music loop: boss | boss | `assets/music/boss.wav` | generated placeholder (tools/gen_assets.py) |
 | Player 1 sheet (blue scarf) | player1 | `assets/sprites/player1.png` | generated placeholder (tools/gen_assets.py) |
 | Player 2 sheet (red scarf, splitscreen) | player2 | `assets/sprites/player2.png` | generated placeholder (tools/gen_assets.py) |
 | Enemy: draugr | enemy_draugr | `assets/sprites/enemy_draugr.png` | generated placeholder (tools/gen_assets.py) |
@@ -146,6 +99,53 @@ Regenerate everything: `python3 tools/gen_assets.py` (overwrites!).  Machine lis
 | Projectile sprite: grenade | proj_grenade | `assets/ui/proj_grenade.png` | generated placeholder (tools/gen_assets.py) |
 | Projectile sprite: bullet | proj_bullet | `assets/ui/proj_bullet.png` | generated placeholder (tools/gen_assets.py) |
 | Projectile sprite: particle | proj_particle | `assets/ui/proj_particle.png` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_pistol | shot_pistol | `assets/sfx/shot_pistol.wav` | OpenSoldat base: shared/sfx/deserteagle-fire.wav (CC BY 4.0), converted |
+| SFX: shot_revolver | shot_revolver | `assets/sfx/shot_revolver.wav` | OpenSoldat base: shared/sfx/colt1911-fire.wav (CC BY 4.0), converted |
+| SFX: shot_smg | shot_smg | `assets/sfx/shot_smg.wav` | OpenSoldat base: shared/sfx/mp5-fire.wav (CC BY 4.0), converted |
+| SFX: shot_rifle | shot_rifle | `assets/sfx/shot_rifle.wav` | OpenSoldat base: shared/sfx/ak74-fire.wav (CC BY 4.0), converted |
+| SFX: shot_shotgun | shot_shotgun | `assets/sfx/shot_shotgun.wav` | OpenSoldat base: shared/sfx/spas12-fire.wav (CC BY 4.0), converted |
+| SFX: shot_sniper | shot_sniper | `assets/sfx/shot_sniper.wav` | OpenSoldat base: shared/sfx/barretm82-fire.wav (CC BY 4.0), converted |
+| SFX: shot_minigun | shot_minigun | `assets/sfx/shot_minigun.wav` | OpenSoldat base: shared/sfx/minigun-fire.wav (CC BY 4.0), converted |
+| SFX: shot_flame | shot_flame | `assets/sfx/shot_flame.wav` | OpenSoldat base: shared/sfx/flamer.wav (CC BY 4.0), converted |
+| SFX: shot_ice | shot_ice | `assets/sfx/shot_ice.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_acid | shot_acid | `assets/sfx/shot_acid.wav` | OpenSoldat base: shared/sfx/spit.wav (CC BY 4.0), converted |
+| SFX: shot_thunder | shot_thunder | `assets/sfx/shot_thunder.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_rail | shot_rail | `assets/sfx/shot_rail.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_rocket | shot_rocket | `assets/sfx/shot_rocket.wav` | OpenSoldat base: shared/sfx/law.wav (CC BY 4.0), converted |
+| SFX: shot_grenade | shot_grenade | `assets/sfx/shot_grenade.wav` | OpenSoldat base: shared/sfx/m79-fire.wav (CC BY 4.0), converted |
+| SFX: shot_powder | shot_powder | `assets/sfx/shot_powder.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: shot_trick | shot_trick | `assets/sfx/shot_trick.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: melee | melee | `assets/sfx/melee.wav` | OpenSoldat base: shared/sfx/knife.wav (CC BY 4.0), converted |
+| SFX: explosion | explosion | `assets/sfx/explosion.wav` | OpenSoldat base: shared/sfx/grenade-explosion.wav (CC BY 4.0), converted |
+| SFX: explosion_big | explosion_big | `assets/sfx/explosion_big.wav` | OpenSoldat base: shared/sfx/cluster-explosion.wav (CC BY 4.0), converted |
+| SFX: hit_flesh | hit_flesh | `assets/sfx/hit_flesh.wav` | OpenSoldat base: shared/sfx/bonecrack.wav (CC BY 4.0), converted |
+| SFX: hit_wall | hit_wall | `assets/sfx/hit_wall.wav` | OpenSoldat base: shared/sfx/ric3.wav (CC BY 4.0), converted |
+| SFX: hurt | hurt | `assets/sfx/hurt.wav` | OpenSoldat base: shared/sfx/hit-arg2.wav (CC BY 4.0), converted |
+| SFX: die | die | `assets/sfx/die.wav` | OpenSoldat base: shared/sfx/death.wav (CC BY 4.0), converted |
+| SFX: jump | jump | `assets/sfx/jump.wav` | OpenSoldat base: shared/sfx/jump.wav (CC BY 4.0), converted |
+| SFX: land | land | `assets/sfx/land.wav` | OpenSoldat base: shared/sfx/fall.wav (CC BY 4.0), converted |
+| SFX: step | step | `assets/sfx/step.wav` | OpenSoldat base: shared/sfx/step.wav (CC BY 4.0), converted |
+| SFX: jet | jet | `assets/sfx/jet.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: pickup | pickup | `assets/sfx/pickup.wav` | OpenSoldat base: shared/sfx/takegun.wav (CC BY 4.0), converted |
+| SFX: pickup_weapon | pickup_weapon | `assets/sfx/pickup_weapon.wav` | OpenSoldat base: shared/sfx/pickupgun.wav (CC BY 4.0), converted |
+| SFX: reload | reload | `assets/sfx/reload.wav` | OpenSoldat base: shared/sfx/mp5-reload.wav (CC BY 4.0), converted |
+| SFX: empty | empty | `assets/sfx/empty.wav` | OpenSoldat base: shared/sfx/minigun-empty.wav (CC BY 4.0), converted |
+| SFX: mission_done | mission_done | `assets/sfx/mission_done.wav` | OpenSoldat base: shared/sfx/capture.wav (CC BY 4.0), converted |
+| SFX: ui_click | ui_click | `assets/sfx/ui_click.wav` | OpenSoldat base: shared/sfx/menuclick.wav (CC BY 4.0), converted |
+| SFX: ui_open | ui_open | `assets/sfx/ui_open.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: splash | splash | `assets/sfx/splash.wav` | OpenSoldat base: shared/sfx/bryzg.wav (CC BY 4.0), converted |
+| SFX: sizzle | sizzle | `assets/sfx/sizzle.wav` | OpenSoldat base: shared/sfx/burn.wav (CC BY 4.0), converted |
+| SFX: boss_roar | boss_roar | `assets/sfx/boss_roar.wav` | OpenSoldat base: shared/sfx/roar.wav (CC BY 4.0), converted |
+| SFX: thunder_strike | thunder_strike | `assets/sfx/thunder_strike.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: gate | gate | `assets/sfx/gate.wav` | generated placeholder (tools/gen_assets.py) |
+| SFX: heal | heal | `assets/sfx/heal.wav` | OpenSoldat base: shared/sfx/regenerate.wav (CC BY 4.0), converted |
+| Music loop: menu | menu | `assets/music/menu.wav` | generated placeholder (tools/gen_assets.py) |
+| Music loop: map | map | `assets/music/map.wav` | generated placeholder (tools/gen_assets.py) |
+| Music loop: calm | calm | `assets/music/calm.wav` | generated placeholder (tools/gen_assets.py) |
+| Music loop: norse | norse | `assets/music/norse.wav` | generated placeholder (tools/gen_assets.py) |
+| Music loop: kalevala | kalevala | `assets/music/kalevala.wav` | generated placeholder (tools/gen_assets.py) |
+| Music loop: dark | dark | `assets/music/dark.wav` | generated placeholder (tools/gen_assets.py) |
+| Music loop: boss | boss | `assets/music/boss.wav` | generated placeholder (tools/gen_assets.py) |
 | Element colour overrides (optional) | elements | `assets/data/elements.txt` | generated by `nordsoldpow --dump-docs` |
 
 ## Details & how to replace

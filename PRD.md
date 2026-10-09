@@ -16,9 +16,11 @@ Art direction: chunky pixel art reminiscent of *Starbound*.
 ## 2. Reference projects (inspiration, NOT code copies)
 * The Powder Toy (https://github.com/The-Powder-Toy/The-Powder-Toy) - GPL-3. Element behaviours re-implemented from scratch.
 * Soldat (https://github.com/soldat/soldat) - weapon feel/jetpack/aiming re-implemented from scratch.
-* **Note:** the build sandbox had no network access to GitHub outside this repo (HTTP 403), so the reference repos
-  could not be cloned. Assets (sprites, sfx, music) are therefore *generated placeholders* (tools/gen_assets.py)
-  rather than copies. Real Soldat/Powder Toy assets can be dropped in later - see `assets.md`.
+* **Cloned for reference** (shallow clones, read-only, kept outside this repo): `soldat/soldat` (MIT, Pascal source only),
+  `The-Powder-Toy/The-Powder-Toy` (GPL-3, C++; no sound/art assets), and `opensoldat/base` (Soldat's real game content, CC BY 4.0).
+  * **Code is original** (no GPL code copied, so this project stays MIT). Powder Toy / Soldat were studied for element lists, colours and weapon stats.
+  * **Sound effects**: 31 real Soldat SFX imported from `opensoldat/base` (CC BY 4.0, attribution in assets.md / README) by `tools/import_soldat.py`.
+  * **Music**: neither reference ships music -> generated placeholder loops. **Sprites**: generated Starbound-style pixel art (as requested).
 
 ## 3. Goals
 1. Fully playable single-player campaign across 14 worlds with missions, optional tasks, bosses.

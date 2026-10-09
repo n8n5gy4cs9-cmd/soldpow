@@ -48,7 +48,10 @@ def sprites():
 def audio():
     import gen_audio as G
     (A / "sfx").mkdir(parents=True, exist_ok=True); (A / "music").mkdir(parents=True, exist_ok=True)
+    imp = json.loads((ROOT / "tools" / "imported.json").read_text()) if (ROOT / "tools" / "imported.json").exists() else {}
     for k, x in G.sfx_table().items():
+        if f"sfx/{k}" in imp and (A / "sfx" / f"{k}.wav").exists() and "--force" not in sys.argv:
+            add(f"SFX: {k}", f"sfx/{k}.wav", "sfx", "16-bit 22.05kHz mono WAV"); M[-1]["source"] = imp[f"sfx/{k}"]; continue
         G.save(str(A / "sfx" / f"{k}.wav"), x); add(f"SFX: {k}", f"sfx/{k}.wav", "sfx", f"{len(x)/G.SR:.2f}s 22.05kHz mono WAV")
     for k, x in G.music_table().items():
         G.save(str(A / "music" / f"{k}.wav"), x, .8); add(f"Music loop: {k}", f"music/{k}.wav", "music", f"{len(x)/G.SR:.0f}s 22.05kHz mono WAV, loops seamlessly")
@@ -56,7 +59,7 @@ def audio():
 def write_docs():
     (A / "manifest.json").write_text(json.dumps(M, indent=1))
     L = ["# nordSoldPow - Assets", "",
-         "All assets are **generated placeholders** (the original Soldat / Powder Toy repos could not be cloned in the build sandbox - GitHub returned HTTP 403).",
+         "Most art and all music are **generated placeholders** (`tools/gen_assets.py`). **Sound effects marked `OpenSoldat base` are real Soldat sounds** (https://github.com/opensoldat/base, licence **CC BY 4.0** - attribution required, included here and in README/credits; converted to 16-bit 22.05 kHz mono). Soldat itself ships no music; The Powder Toy ships no sound or art assets (elements are just colours).",
          "Everything is loaded **at runtime** from `assets/`; replace a file (same path, same name) and restart. Missing files never crash the game (fallback shape / silence).",
          "Formats: sprites = PNG (RGBA, nearest-neighbour, 1 px = 1 world cell), audio = WAV or OGG (use the same file name; keep `.wav` unless you also edit `src/assets.rs` extension list - `.ogg` is tried first automatically).",
          "Regenerate everything: `python3 tools/gen_assets.py` (overwrites!).  Machine list: `assets/manifest.json`.", "",
@@ -80,6 +83,7 @@ def write_docs():
 
 if __name__ == "__main__":
     only = sys.argv[2] if len(sys.argv) > 2 and sys.argv[1] == "--only" else None
+    if "--force" in sys.argv: print("--force: regenerating everything, including imported Soldat sounds")
     if only in (None, "sprites"): sprites()
     if only in (None, "audio"): audio()
     if only: # keep other rows from previous manifest

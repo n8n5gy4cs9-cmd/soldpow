@@ -57,6 +57,7 @@ impl Game {
         let landed = wr.body.landed;
         if landed > 7.5 && !ghost && g > 0.0 { let dmg = (landed - 7.5) * 8.0 / (self.pdef().gravity).max(0.4); self.hurt_player(pi, dmg, 0.0, None); self.sfx_at("land", self.players[pi].body.x, self.players[pi].body.y); }
         if std::mem::take(&mut self.audio_jump) { let (x, y) = (self.players[pi].body.x, self.players[pi].body.y); self.sfx_at("jump", x, y); }
+        if self.players[pi].body.on_ground && self.players[pi].body.vx.abs() > 0.9 && self.tick % 14 == 0 { let (x, y) = (self.players[pi].body.x, self.players[pi].body.y); self.sfx_at("step", x, y); }
         // jetpack effects
         if self.players[pi].jetting {
             let (x, y) = (self.players[pi].body.x, self.players[pi].body.y);

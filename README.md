@@ -59,9 +59,11 @@ Full list: [`commands.txt`](commands.txt) (checked against the code by a unit te
 * [`assets.md`](assets.md) - every sprite / sound / music file with its path, easy to replace
 
 ## Assets
-All art and audio are **generated placeholders** (`python3 tools/gen_assets.py`, needs Pillow + numpy). Replace any file in `assets/`
+Sprites, backgrounds, UI and music are **generated placeholders**; 31 sound effects are real Soldat sounds (CC BY 4.0) (`python3 tools/gen_assets.py`, needs Pillow + numpy). Replace any file in `assets/`
 (same path) and restart - nothing is compiled in. See `assets.md`.
 
 ## Licence & credits
 Game code: MIT (see LICENSE). Inspired by *The Powder Toy* (GPL-3) and *Soldat* (MIT) - no code from either project is included.
+**Sound effects** listed as `OpenSoldat base` in `assets.md` are from the OpenSoldat base content (https://github.com/opensoldat/base), licensed **CC BY 4.0**, converted to 16-bit 22 kHz mono WAV.
+If you redistribute the game, keep this attribution.
 Lore: Norse sagas and Elias Lonnrot's *Kalevala* (public domain).

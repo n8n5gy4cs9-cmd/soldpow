@@ -69,5 +69,5 @@ No platform APIs. macOS: `tools/bundle_macos.sh` builds .app (arm64). Windows: `
 Linux: needs libasound2-dev, libx11/libgl dev packages for build of audio/window crates.
 
 ## Risk / fallback
-* No GitHub access to clone references -> generated assets (documented).
+* Reference repos are cloned only for study; no GPL code is copied (Powder Toy is GPL-3). Soldat base assets are CC BY 4.0 -> attribution required (assets.md, README).
 * Sandbox has no display -> logic is unit-testable; `--selftest` runs headless sim; rendering verified by eye on Mac.
