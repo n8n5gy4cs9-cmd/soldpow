@@ -2,7 +2,7 @@
 
 _Generated from PRD.json by `python3 tools/task.py sync` - do not hand-edit; use `tools/task.py done <id>`._
 
-**Progress: 80/99 total | 79/84 required | updated 2026-10-09**
+**Progress: 82/99 total | 81/84 required | updated 2026-10-09**
 
 Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optional.
 
@@ -12,8 +12,6 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 
 - `6.4` Spawners / waves (survive missions)
 - `7.6` Optional tasks tracker / journal screen
-- `13.1` Unit tests (sim rules, console parser, mission engine)
-- `13.2` Playtest headless smoke test (sim + frames)
 - `13.4` Final zip of repo + commit + push
 
 ## P0 Planning & docs  (8/8)
@@ -140,10 +138,10 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 - [ ] `12.4` Minimap *(opt)*
 - [x] `12.5` Credits screen: by Crowelian 2026 + Sonnet
 
-## P13 Polish + ship  (1/8)
+## P13 Polish + ship  (3/8)
 
-- [ ] `13.1` Unit tests (sim rules, console parser, mission engine)
-- [ ] `13.2` Playtest headless smoke test (sim + frames)
+- [x] `13.1` Unit tests (sim rules, console parser, mission engine)
+- [x] `13.2` Playtest headless smoke test (sim + frames)
 - [x] `13.3` README with controls + build instructions
 - [ ] `13.4` Final zip of repo + commit + push
 - [ ] `13.5` Windows + Linux verified builds *(opt)*

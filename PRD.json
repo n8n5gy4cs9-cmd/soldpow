@@ -853,7 +853,7 @@
    "title": "Unit tests (sim rules, console parser, mission engine)",
    "files": "tests",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -862,7 +862,7 @@
    "title": "Playtest headless smoke test (sim + frames)",
    "files": "src/main.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {

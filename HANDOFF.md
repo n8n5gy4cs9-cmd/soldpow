@@ -18,4 +18,8 @@
 * Reference repos CAN be cloned in cloud sessions via the `add_repo` tool + `git clone --depth 1` (proxy serves public repos). Soldat's real assets: opensoldat/base (CC BY 4.0). `python3 tools/import_soldat.py <path-to-base>` imports SFX. Code stays original/MIT.
 
 ## Status log (newest first)
+* 2026-10-09 (final of session 1): GAME IS PLAYABLE. 14 worlds, 70 missions, 9 bosses, 18 weapons, 60 elements, console+cheat menu, splitscreen co-op/versus,
+  99 imported Soldat arenas, 31 real Soldat SFX. Tests: `cargo test --release` (25+), headless `--selftest` (bots on all planets, mission chain, all arenas).
+  NOT verified on a real Mac (author had Linux/Xvfb only): window, audio output, retina scaling, splitscreen scissor. See docs/MAC_BUILD_FIX.md.
+  Ideas next: bots in arenas (14.5), Play font for diacritics (14.6), crouch/prone (4.10), ragdoll (4.11), gamepad (11.4), temperature (3.14), save/load sandbox (3.13), minimap (12.4), online (13.7).
 * 2026-10-09: Planning docs complete (PRD.md, PRD.json, task.md, docs/PLAN.md, docs/LORE.md, commands.txt, HANDOFF.md). Next: P1 skeleton + P2 asset generator.
