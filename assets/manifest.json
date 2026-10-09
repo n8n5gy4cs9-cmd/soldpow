@@ -1,0 +1,1235 @@
+[
+ {
+  "use": "Player 1 sheet (blue scarf)",
+  "name": "player1",
+  "path": "assets/sprites/player1.png",
+  "kind": "sprite",
+  "size": "128x24 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "8 frames of 16x24: idle, run1-4, jump, fall, dead. Faces right (code mirrors)."
+ },
+ {
+  "use": "Player 2 sheet (red scarf, splitscreen)",
+  "name": "player2",
+  "path": "assets/sprites/player2.png",
+  "kind": "sprite",
+  "size": "128x24 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "same layout as player1"
+ },
+ {
+  "use": "Enemy: draugr",
+  "name": "enemy_draugr",
+  "path": "assets/sprites/enemy_draugr.png",
+  "kind": "sprite",
+  "size": "128x24 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "8 frames 16x24 (same layout as player)"
+ },
+ {
+  "use": "Enemy: berserker",
+  "name": "enemy_berserker",
+  "path": "assets/sprites/enemy_berserker.png",
+  "kind": "sprite",
+  "size": "128x24 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "8 frames 16x24 (same layout as player)"
+ },
+ {
+  "use": "Enemy: eldjotunn",
+  "name": "enemy_eldjotunn",
+  "path": "assets/sprites/enemy_eldjotunn.png",
+  "kind": "sprite",
+  "size": "128x24 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "8 frames 16x24 (same layout as player)"
+ },
+ {
+  "use": "Enemy: frostjotunn",
+  "name": "enemy_frostjotunn",
+  "path": "assets/sprites/enemy_frostjotunn.png",
+  "kind": "sprite",
+  "size": "128x24 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "8 frames 16x24 (same layout as player)"
+ },
+ {
+  "use": "Enemy: valkyrie",
+  "name": "enemy_valkyrie",
+  "path": "assets/sprites/enemy_valkyrie.png",
+  "kind": "sprite",
+  "size": "128x24 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "8 frames 16x24 (same layout as player)"
+ },
+ {
+  "use": "Enemy: hiisi",
+  "name": "enemy_hiisi",
+  "path": "assets/sprites/enemy_hiisi.png",
+  "kind": "sprite",
+  "size": "128x24 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "8 frames 16x24 (same layout as player)"
+ },
+ {
+  "use": "Enemy: kalma",
+  "name": "enemy_kalma",
+  "path": "assets/sprites/enemy_kalma.png",
+  "kind": "sprite",
+  "size": "128x24 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "8 frames 16x24 (same layout as player)"
+ },
+ {
+  "use": "Enemy: louhi_guard",
+  "name": "enemy_louhi_guard",
+  "path": "assets/sprites/enemy_louhi_guard.png",
+  "kind": "sprite",
+  "size": "128x24 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "8 frames 16x24 (same layout as player)"
+ },
+ {
+  "use": "Enemy: svartalf",
+  "name": "enemy_svartalf",
+  "path": "assets/sprites/enemy_svartalf.png",
+  "kind": "sprite",
+  "size": "128x24 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "8 frames 16x24 (same layout as player)"
+ },
+ {
+  "use": "Enemy: fenrir_pup (wolf)",
+  "name": "enemy_fenrir_pup",
+  "path": "assets/sprites/enemy_fenrir_pup.png",
+  "kind": "sprite",
+  "size": "96x16 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "4 frames of 24x16: idle, run1, run2, dead"
+ },
+ {
+  "use": "Boss: fenrir",
+  "name": "boss_fenrir",
+  "path": "assets/sprites/boss_fenrir.png",
+  "kind": "sprite",
+  "size": "48x48 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "single 48x48 frame, faces right"
+ },
+ {
+  "use": "Boss: surtr",
+  "name": "boss_surtr",
+  "path": "assets/sprites/boss_surtr.png",
+  "kind": "sprite",
+  "size": "48x48 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "single 48x48 frame, faces right"
+ },
+ {
+  "use": "Boss: ymir",
+  "name": "boss_ymir",
+  "path": "assets/sprites/boss_ymir.png",
+  "kind": "sprite",
+  "size": "48x48 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "single 48x48 frame, faces right"
+ },
+ {
+  "use": "Boss: jormungandr",
+  "name": "boss_jormungandr",
+  "path": "assets/sprites/boss_jormungandr.png",
+  "kind": "sprite",
+  "size": "48x48 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "single 48x48 frame, faces right"
+ },
+ {
+  "use": "Boss: hel",
+  "name": "boss_hel",
+  "path": "assets/sprites/boss_hel.png",
+  "kind": "sprite",
+  "size": "48x48 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "single 48x48 frame, faces right"
+ },
+ {
+  "use": "Boss: louhi",
+  "name": "boss_louhi",
+  "path": "assets/sprites/boss_louhi.png",
+  "kind": "sprite",
+  "size": "48x48 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "single 48x48 frame, faces right"
+ },
+ {
+  "use": "Boss: tuoni",
+  "name": "boss_tuoni",
+  "path": "assets/sprites/boss_tuoni.png",
+  "kind": "sprite",
+  "size": "48x48 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "single 48x48 frame, faces right"
+ },
+ {
+  "use": "Boss: rauta_golem",
+  "name": "boss_rauta_golem",
+  "path": "assets/sprites/boss_rauta_golem.png",
+  "kind": "sprite",
+  "size": "48x48 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "single 48x48 frame, faces right"
+ },
+ {
+  "use": "Boss: ukko_eagle",
+  "name": "boss_ukko_eagle",
+  "path": "assets/sprites/boss_ukko_eagle.png",
+  "kind": "sprite",
+  "size": "48x48 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "single 48x48 frame, faces right"
+ },
+ {
+  "use": "Weapon sprite: puukko",
+  "name": "puukko",
+  "path": "assets/weapons/puukko.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: hugin",
+  "name": "hugin",
+  "path": "assets/weapons/hugin.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: munin",
+  "name": "munin",
+  "path": "assets/weapons/munin.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: lemminkainen_smg",
+  "name": "lemminkainen_smg",
+  "path": "assets/weapons/lemminkainen_smg.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: vainamoinen_gun",
+  "name": "vainamoinen_gun",
+  "path": "assets/weapons/vainamoinen_gun.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: kullervo_shotgun",
+  "name": "kullervo_shotgun",
+  "path": "assets/weapons/kullervo_shotgun.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: gungnir_sniper",
+  "name": "gungnir_sniper",
+  "path": "assets/weapons/gungnir_sniper.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: mjolnir_rpg",
+  "name": "mjolnir_rpg",
+  "path": "assets/weapons/mjolnir_rpg.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: gjallar_grenade",
+  "name": "gjallar_grenade",
+  "path": "assets/weapons/gjallar_grenade.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: surtr_flame",
+  "name": "surtr_flame",
+  "path": "assets/weapons/surtr_flame.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: louhi_frost",
+  "name": "louhi_frost",
+  "path": "assets/weapons/louhi_frost.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: tuoni_acid",
+  "name": "tuoni_acid",
+  "path": "assets/weapons/tuoni_acid.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: ukko_thunder",
+  "name": "ukko_thunder",
+  "path": "assets/weapons/ukko_thunder.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: ilmarinen_rail",
+  "name": "ilmarinen_rail",
+  "path": "assets/weapons/ilmarinen_rail.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: sampo_gun",
+  "name": "sampo_gun",
+  "path": "assets/weapons/sampo_gun.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: powder_gun",
+  "name": "powder_gun",
+  "path": "assets/weapons/powder_gun.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: fenrir_minigun",
+  "name": "fenrir_minigun",
+  "path": "assets/weapons/fenrir_minigun.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Weapon sprite: loki_trick",
+  "name": "loki_trick",
+  "path": "assets/weapons/loki_trick.png",
+  "kind": "weapon",
+  "size": "24x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "24x12, barrel points +x, grip pivot ~(5,7)"
+ },
+ {
+  "use": "Planet icon: midgard",
+  "name": "midgard",
+  "path": "assets/planets/midgard.png",
+  "kind": "map",
+  "size": "64x64 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Planet icon: mani",
+  "name": "mani",
+  "path": "assets/planets/mani.png",
+  "kind": "map",
+  "size": "64x64 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Planet icon: muspell",
+  "name": "muspell",
+  "path": "assets/planets/muspell.png",
+  "kind": "map",
+  "size": "64x64 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Planet icon: vanaheim",
+  "name": "vanaheim",
+  "path": "assets/planets/vanaheim.png",
+  "kind": "map",
+  "size": "64x64 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Planet icon: jotunheim",
+  "name": "jotunheim",
+  "path": "assets/planets/jotunheim.png",
+  "kind": "map",
+  "size": "64x64 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Planet icon: asgard",
+  "name": "asgard",
+  "path": "assets/planets/asgard.png",
+  "kind": "map",
+  "size": "64x64 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Planet icon: niflheim",
+  "name": "niflheim",
+  "path": "assets/planets/niflheim.png",
+  "kind": "map",
+  "size": "64x64 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Planet icon: svartalfheim",
+  "name": "svartalfheim",
+  "path": "assets/planets/svartalfheim.png",
+  "kind": "map",
+  "size": "64x64 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Planet icon: helheim",
+  "name": "helheim",
+  "path": "assets/planets/helheim.png",
+  "kind": "map",
+  "size": "64x64 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Planet icon: kalevala",
+  "name": "kalevala",
+  "path": "assets/planets/kalevala.png",
+  "kind": "map",
+  "size": "64x64 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Planet icon: pohjola",
+  "name": "pohjola",
+  "path": "assets/planets/pohjola.png",
+  "kind": "map",
+  "size": "64x64 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Planet icon: tuonela",
+  "name": "tuonela",
+  "path": "assets/planets/tuonela.png",
+  "kind": "map",
+  "size": "64x64 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Planet icon: sampola",
+  "name": "sampola",
+  "path": "assets/planets/sampola.png",
+  "kind": "map",
+  "size": "64x64 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Planet icon: ukkola",
+  "name": "ukkola",
+  "path": "assets/planets/ukkola.png",
+  "kind": "map",
+  "size": "64x64 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Star Sol (Norse system centre)",
+  "name": "sol",
+  "path": "assets/planets/sol.png",
+  "kind": "map",
+  "size": "96x96 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Star Paivatar (Kalevala system centre)",
+  "name": "paivatar",
+  "path": "assets/planets/paivatar.png",
+  "kind": "map",
+  "size": "96x96 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Bifrost / Aurora gate on the map",
+  "name": "gate",
+  "path": "assets/planets/gate.png",
+  "kind": "map",
+  "size": "48x48 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Parallax background silhouette: midgard",
+  "name": "midgard",
+  "path": "assets/bg/midgard.png",
+  "kind": "background",
+  "size": "320x180 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "320x180 transparent; sky colours come from planets.rs"
+ },
+ {
+  "use": "Parallax background silhouette: mani",
+  "name": "mani",
+  "path": "assets/bg/mani.png",
+  "kind": "background",
+  "size": "320x180 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "320x180 transparent; sky colours come from planets.rs"
+ },
+ {
+  "use": "Parallax background silhouette: muspell",
+  "name": "muspell",
+  "path": "assets/bg/muspell.png",
+  "kind": "background",
+  "size": "320x180 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "320x180 transparent; sky colours come from planets.rs"
+ },
+ {
+  "use": "Parallax background silhouette: vanaheim",
+  "name": "vanaheim",
+  "path": "assets/bg/vanaheim.png",
+  "kind": "background",
+  "size": "320x180 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "320x180 transparent; sky colours come from planets.rs"
+ },
+ {
+  "use": "Parallax background silhouette: jotunheim",
+  "name": "jotunheim",
+  "path": "assets/bg/jotunheim.png",
+  "kind": "background",
+  "size": "320x180 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "320x180 transparent; sky colours come from planets.rs"
+ },
+ {
+  "use": "Parallax background silhouette: asgard",
+  "name": "asgard",
+  "path": "assets/bg/asgard.png",
+  "kind": "background",
+  "size": "320x180 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "320x180 transparent; sky colours come from planets.rs"
+ },
+ {
+  "use": "Parallax background silhouette: niflheim",
+  "name": "niflheim",
+  "path": "assets/bg/niflheim.png",
+  "kind": "background",
+  "size": "320x180 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "320x180 transparent; sky colours come from planets.rs"
+ },
+ {
+  "use": "Parallax background silhouette: svartalfheim",
+  "name": "svartalfheim",
+  "path": "assets/bg/svartalfheim.png",
+  "kind": "background",
+  "size": "320x180 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "320x180 transparent; sky colours come from planets.rs"
+ },
+ {
+  "use": "Parallax background silhouette: helheim",
+  "name": "helheim",
+  "path": "assets/bg/helheim.png",
+  "kind": "background",
+  "size": "320x180 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "320x180 transparent; sky colours come from planets.rs"
+ },
+ {
+  "use": "Parallax background silhouette: kalevala",
+  "name": "kalevala",
+  "path": "assets/bg/kalevala.png",
+  "kind": "background",
+  "size": "320x180 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "320x180 transparent; sky colours come from planets.rs"
+ },
+ {
+  "use": "Parallax background silhouette: pohjola",
+  "name": "pohjola",
+  "path": "assets/bg/pohjola.png",
+  "kind": "background",
+  "size": "320x180 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "320x180 transparent; sky colours come from planets.rs"
+ },
+ {
+  "use": "Parallax background silhouette: tuonela",
+  "name": "tuonela",
+  "path": "assets/bg/tuonela.png",
+  "kind": "background",
+  "size": "320x180 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "320x180 transparent; sky colours come from planets.rs"
+ },
+ {
+  "use": "Parallax background silhouette: sampola",
+  "name": "sampola",
+  "path": "assets/bg/sampola.png",
+  "kind": "background",
+  "size": "320x180 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "320x180 transparent; sky colours come from planets.rs"
+ },
+ {
+  "use": "Parallax background silhouette: ukkola",
+  "name": "ukkola",
+  "path": "assets/bg/ukkola.png",
+  "kind": "background",
+  "size": "320x180 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "320x180 transparent; sky colours come from planets.rs"
+ },
+ {
+  "use": "Title logo",
+  "name": "logo",
+  "path": "assets/ui/logo.png",
+  "kind": "ui",
+  "size": "420x96 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Crosshair cursor",
+  "name": "crosshair",
+  "path": "assets/ui/crosshair.png",
+  "kind": "ui",
+  "size": "16x16 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "16x16 centre-aligned"
+ },
+ {
+  "use": "Pickup: health",
+  "name": "pickup_health",
+  "path": "assets/ui/pickup_health.png",
+  "kind": "ui",
+  "size": "12x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "12x12"
+ },
+ {
+  "use": "Pickup: ammo",
+  "name": "pickup_ammo",
+  "path": "assets/ui/pickup_ammo.png",
+  "kind": "ui",
+  "size": "12x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "12x12"
+ },
+ {
+  "use": "Pickup: shard",
+  "name": "pickup_shard",
+  "path": "assets/ui/pickup_shard.png",
+  "kind": "ui",
+  "size": "12x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "12x12"
+ },
+ {
+  "use": "Pickup: silver",
+  "name": "pickup_silver",
+  "path": "assets/ui/pickup_silver.png",
+  "kind": "ui",
+  "size": "12x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "12x12"
+ },
+ {
+  "use": "Pickup: weapon",
+  "name": "pickup_weapon",
+  "path": "assets/ui/pickup_weapon.png",
+  "kind": "ui",
+  "size": "12x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "12x12"
+ },
+ {
+  "use": "HUD icon: grenade",
+  "name": "icon_grenade",
+  "path": "assets/ui/icon_grenade.png",
+  "kind": "ui",
+  "size": "12x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "12x12"
+ },
+ {
+  "use": "HUD icon: fuel",
+  "name": "icon_fuel",
+  "path": "assets/ui/icon_fuel.png",
+  "kind": "ui",
+  "size": "12x12 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "12x12"
+ },
+ {
+  "use": "Hotspot marker: spring",
+  "name": "hotspot_spring",
+  "path": "assets/ui/hotspot_spring.png",
+  "kind": "ui",
+  "size": "16x16 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "16x16"
+ },
+ {
+  "use": "Hotspot marker: rune",
+  "name": "hotspot_rune",
+  "path": "assets/ui/hotspot_rune.png",
+  "kind": "ui",
+  "size": "16x16 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "16x16"
+ },
+ {
+  "use": "Hotspot marker: chest",
+  "name": "hotspot_chest",
+  "path": "assets/ui/hotspot_chest.png",
+  "kind": "ui",
+  "size": "16x16 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "16x16"
+ },
+ {
+  "use": "Hotspot marker: forge",
+  "name": "hotspot_forge",
+  "path": "assets/ui/hotspot_forge.png",
+  "kind": "ui",
+  "size": "16x16 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "16x16"
+ },
+ {
+  "use": "Hotspot marker: gate",
+  "name": "hotspot_gate",
+  "path": "assets/ui/hotspot_gate.png",
+  "kind": "ui",
+  "size": "16x16 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "16x16"
+ },
+ {
+  "use": "Hotspot marker: sauna",
+  "name": "hotspot_sauna",
+  "path": "assets/ui/hotspot_sauna.png",
+  "kind": "ui",
+  "size": "16x16 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "16x16"
+ },
+ {
+  "use": "Hotspot marker: bunker",
+  "name": "hotspot_bunker",
+  "path": "assets/ui/hotspot_bunker.png",
+  "kind": "ui",
+  "size": "16x16 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": "16x16"
+ },
+ {
+  "use": "Projectile sprite: rocket",
+  "name": "proj_rocket",
+  "path": "assets/ui/proj_rocket.png",
+  "kind": "sprite",
+  "size": "10x5 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Projectile sprite: grenade",
+  "name": "proj_grenade",
+  "path": "assets/ui/proj_grenade.png",
+  "kind": "sprite",
+  "size": "7x7 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Projectile sprite: bullet",
+  "name": "proj_bullet",
+  "path": "assets/ui/proj_bullet.png",
+  "kind": "sprite",
+  "size": "6x2 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Projectile sprite: particle",
+  "name": "proj_particle",
+  "path": "assets/ui/proj_particle.png",
+  "kind": "sprite",
+  "size": "3x3 PNG",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_pistol",
+  "name": "shot_pistol",
+  "path": "assets/sfx/shot_pistol.wav",
+  "kind": "sfx",
+  "size": "0.16s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_revolver",
+  "name": "shot_revolver",
+  "path": "assets/sfx/shot_revolver.wav",
+  "kind": "sfx",
+  "size": "0.30s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_smg",
+  "name": "shot_smg",
+  "path": "assets/sfx/shot_smg.wav",
+  "kind": "sfx",
+  "size": "0.10s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_rifle",
+  "name": "shot_rifle",
+  "path": "assets/sfx/shot_rifle.wav",
+  "kind": "sfx",
+  "size": "0.20s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_shotgun",
+  "name": "shot_shotgun",
+  "path": "assets/sfx/shot_shotgun.wav",
+  "kind": "sfx",
+  "size": "0.35s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_sniper",
+  "name": "shot_sniper",
+  "path": "assets/sfx/shot_sniper.wav",
+  "kind": "sfx",
+  "size": "0.50s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_minigun",
+  "name": "shot_minigun",
+  "path": "assets/sfx/shot_minigun.wav",
+  "kind": "sfx",
+  "size": "0.07s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_flame",
+  "name": "shot_flame",
+  "path": "assets/sfx/shot_flame.wav",
+  "kind": "sfx",
+  "size": "0.25s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_ice",
+  "name": "shot_ice",
+  "path": "assets/sfx/shot_ice.wav",
+  "kind": "sfx",
+  "size": "0.30s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_acid",
+  "name": "shot_acid",
+  "path": "assets/sfx/shot_acid.wav",
+  "kind": "sfx",
+  "size": "0.25s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_thunder",
+  "name": "shot_thunder",
+  "path": "assets/sfx/shot_thunder.wav",
+  "kind": "sfx",
+  "size": "0.35s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_rail",
+  "name": "shot_rail",
+  "path": "assets/sfx/shot_rail.wav",
+  "kind": "sfx",
+  "size": "0.45s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_rocket",
+  "name": "shot_rocket",
+  "path": "assets/sfx/shot_rocket.wav",
+  "kind": "sfx",
+  "size": "0.50s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_grenade",
+  "name": "shot_grenade",
+  "path": "assets/sfx/shot_grenade.wav",
+  "kind": "sfx",
+  "size": "0.22s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_powder",
+  "name": "shot_powder",
+  "path": "assets/sfx/shot_powder.wav",
+  "kind": "sfx",
+  "size": "0.18s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: shot_trick",
+  "name": "shot_trick",
+  "path": "assets/sfx/shot_trick.wav",
+  "kind": "sfx",
+  "size": "0.20s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: melee",
+  "name": "melee",
+  "path": "assets/sfx/melee.wav",
+  "kind": "sfx",
+  "size": "0.14s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: explosion",
+  "name": "explosion",
+  "path": "assets/sfx/explosion.wav",
+  "kind": "sfx",
+  "size": "0.80s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: explosion_big",
+  "name": "explosion_big",
+  "path": "assets/sfx/explosion_big.wav",
+  "kind": "sfx",
+  "size": "1.60s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: hit_flesh",
+  "name": "hit_flesh",
+  "path": "assets/sfx/hit_flesh.wav",
+  "kind": "sfx",
+  "size": "0.12s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: hit_wall",
+  "name": "hit_wall",
+  "path": "assets/sfx/hit_wall.wav",
+  "kind": "sfx",
+  "size": "0.08s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: hurt",
+  "name": "hurt",
+  "path": "assets/sfx/hurt.wav",
+  "kind": "sfx",
+  "size": "0.22s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: die",
+  "name": "die",
+  "path": "assets/sfx/die.wav",
+  "kind": "sfx",
+  "size": "0.70s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: jump",
+  "name": "jump",
+  "path": "assets/sfx/jump.wav",
+  "kind": "sfx",
+  "size": "0.14s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: land",
+  "name": "land",
+  "path": "assets/sfx/land.wav",
+  "kind": "sfx",
+  "size": "0.12s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: step",
+  "name": "step",
+  "path": "assets/sfx/step.wav",
+  "kind": "sfx",
+  "size": "0.06s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: jet",
+  "name": "jet",
+  "path": "assets/sfx/jet.wav",
+  "kind": "sfx",
+  "size": "0.30s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: pickup",
+  "name": "pickup",
+  "path": "assets/sfx/pickup.wav",
+  "kind": "sfx",
+  "size": "0.15s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: pickup_weapon",
+  "name": "pickup_weapon",
+  "path": "assets/sfx/pickup_weapon.wav",
+  "kind": "sfx",
+  "size": "0.28s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: reload",
+  "name": "reload",
+  "path": "assets/sfx/reload.wav",
+  "kind": "sfx",
+  "size": "0.19s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: empty",
+  "name": "empty",
+  "path": "assets/sfx/empty.wav",
+  "kind": "sfx",
+  "size": "0.03s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: mission_done",
+  "name": "mission_done",
+  "path": "assets/sfx/mission_done.wav",
+  "kind": "sfx",
+  "size": "0.64s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: ui_click",
+  "name": "ui_click",
+  "path": "assets/sfx/ui_click.wav",
+  "kind": "sfx",
+  "size": "0.04s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: ui_open",
+  "name": "ui_open",
+  "path": "assets/sfx/ui_open.wav",
+  "kind": "sfx",
+  "size": "0.12s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: splash",
+  "name": "splash",
+  "path": "assets/sfx/splash.wav",
+  "kind": "sfx",
+  "size": "0.30s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: sizzle",
+  "name": "sizzle",
+  "path": "assets/sfx/sizzle.wav",
+  "kind": "sfx",
+  "size": "0.35s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: boss_roar",
+  "name": "boss_roar",
+  "path": "assets/sfx/boss_roar.wav",
+  "kind": "sfx",
+  "size": "1.40s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: thunder_strike",
+  "name": "thunder_strike",
+  "path": "assets/sfx/thunder_strike.wav",
+  "kind": "sfx",
+  "size": "1.50s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: gate",
+  "name": "gate",
+  "path": "assets/sfx/gate.wav",
+  "kind": "sfx",
+  "size": "1.20s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "SFX: heal",
+  "name": "heal",
+  "path": "assets/sfx/heal.wav",
+  "kind": "sfx",
+  "size": "0.36s 22.05kHz mono WAV",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Music loop: menu",
+  "name": "menu",
+  "path": "assets/music/menu.wav",
+  "kind": "music",
+  "size": "25s 22.05kHz mono WAV, loops seamlessly",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Music loop: map",
+  "name": "map",
+  "path": "assets/music/map.wav",
+  "kind": "music",
+  "size": "26s 22.05kHz mono WAV, loops seamlessly",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Music loop: calm",
+  "name": "calm",
+  "path": "assets/music/calm.wav",
+  "kind": "music",
+  "size": "22s 22.05kHz mono WAV, loops seamlessly",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Music loop: norse",
+  "name": "norse",
+  "path": "assets/music/norse.wav",
+  "kind": "music",
+  "size": "26s 22.05kHz mono WAV, loops seamlessly",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Music loop: kalevala",
+  "name": "kalevala",
+  "path": "assets/music/kalevala.wav",
+  "kind": "music",
+  "size": "29s 22.05kHz mono WAV, loops seamlessly",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Music loop: dark",
+  "name": "dark",
+  "path": "assets/music/dark.wav",
+  "kind": "music",
+  "size": "30s 22.05kHz mono WAV, loops seamlessly",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ },
+ {
+  "use": "Music loop: boss",
+  "name": "boss",
+  "path": "assets/music/boss.wav",
+  "kind": "music",
+  "size": "22s 22.05kHz mono WAV, loops seamlessly",
+  "source": "generated placeholder (tools/gen_assets.py)",
+  "note": ""
+ }
+]

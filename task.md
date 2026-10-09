@@ -2,7 +2,7 @@
 
 _Generated from PRD.json by `python3 tools/task.py sync` - do not hand-edit; use `tools/task.py done <id>`._
 
-**Progress: 7/93 total | 7/80 required | updated 2026-10-09**
+**Progress: 18/93 total | 18/80 required | updated 2026-10-09**
 
 Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optional.
 
@@ -10,20 +10,20 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 
 ## NEXT UP
 
-- `0.6` assets.md (simple list at top + detail below)
 - `1.1` Cargo project (macroquad), release profile tuned for M1 Max
 - `1.2` Game state machine: Boot / Menu / SolarMap / Play / Pause / Story
 - `1.3` Asset loader with graceful fallbacks (missing file => placeholder, never crash)
 - `1.4` Settings + save file (progress, unlocks, silver, completed missions)
+- `1.5` macOS .app bundle script (tools/bundle_macos.sh) + Win/Linux build notes
 
-## P0 Planning & docs  (7/8)
+## P0 Planning & docs  (8/8)
 
 - [x] `0.1` PRD.md written (product requirements)
 - [x] `0.2` PRD.json written (machine-readable source of truth for tasks)
 - [x] `0.3` task.md + tools/task.py (sync task.md from PRD.json)
 - [x] `0.4` docs/PLAN.md architecture + milestones
 - [x] `0.5` docs/LORE.md story, factions, planets, missions
-- [ ] `0.6` assets.md (simple list at top + detail below)
+- [x] `0.6` assets.md (simple list at top + detail below)
 - [x] `0.7` commands.txt (console commands list)
 - [x] `0.8` HANDOFF.md ("continue here" for next AI / next session)
 
@@ -36,18 +36,18 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 - [ ] `1.5` macOS .app bundle script (tools/bundle_macos.sh) + Win/Linux build notes
 - [ ] `1.6` GitHub Actions CI building mac/win/linux *(opt)*
 
-## P2 Asset generation (all placeholders, replaceable)  (0/10)
+## P2 Asset generation (all placeholders, replaceable)  (10/10)
 
-- [ ] `2.1` Python pixel-art toolkit tools/gen_assets.py
-- [ ] `2.2` Player + enemy sprite sheets (Starbound-ish pixel style)
-- [ ] `2.3` Boss sprites (9 bosses)
-- [ ] `2.4` Weapon sprites (all guns)
-- [ ] `2.5` Planet icons (14 planets + 2 stars + gate)
-- [ ] `2.6` Parallax backgrounds per planet
-- [ ] `2.7` UI: logo, icons, pickups, hotspot markers, crosshair
-- [ ] `2.8` Placeholder SFX (synthesised wav)
-- [ ] `2.9` Placeholder music (synthesised kantele-style loops)
-- [ ] `2.10` assets.md auto-generated from manifest (tools/gen_assets.py)
+- [x] `2.1` Python pixel-art toolkit tools/gen_assets.py
+- [x] `2.2` Player + enemy sprite sheets (Starbound-ish pixel style)
+- [x] `2.3` Boss sprites (9 bosses)
+- [x] `2.4` Weapon sprites (all guns)
+- [x] `2.5` Planet icons (14 planets + 2 stars + gate)
+- [x] `2.6` Parallax backgrounds per planet
+- [x] `2.7` UI: logo, icons, pickups, hotspot markers, crosshair
+- [x] `2.8` Placeholder SFX (synthesised wav)
+- [x] `2.9` Placeholder music (synthesised kantele-style loops)
+- [x] `2.10` assets.md auto-generated from manifest (tools/gen_assets.py)
 
 ## P3 Powder sim (Powder Toy side)  (0/15)
 
