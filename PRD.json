@@ -619,7 +619,7 @@
    "title": "Spawners / waves (survive missions)",
    "files": "src/enemy.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -673,7 +673,7 @@
    "title": "Optional tasks tracker / journal screen",
    "files": "src/ui.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -880,7 +880,7 @@
    "title": "Final zip of repo + commit + push",
    "files": "",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {

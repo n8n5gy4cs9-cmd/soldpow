@@ -2,17 +2,11 @@
 
 _Generated from PRD.json by `python3 tools/task.py sync` - do not hand-edit; use `tools/task.py done <id>`._
 
-**Progress: 82/99 total | 81/84 required | updated 2026-10-09**
+**Progress: 85/99 total | 84/84 required | updated 2026-10-09**
 
 Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optional.
 
 **Continue here: see HANDOFF.md**
-
-## NEXT UP
-
-- `6.4` Spawners / waves (survive missions)
-- `7.6` Optional tasks tracker / journal screen
-- `13.4` Final zip of repo + commit + push
 
 ## P0 Planning & docs  (8/8)
 
@@ -88,21 +82,21 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 - [x] `5.5` Parallax background renderer
 - [x] `5.6` Camera (zoom, follow, clamp) per viewport
 
-## P6 Enemies  (3/4)
+## P6 Enemies  (4/4)
 
 - [x] `6.1` Enemy AI (patrol, chase, shoot, melee, flying)
 - [x] `6.2` 10 enemy kinds
 - [x] `6.3` 9 bosses with patterns
-- [ ] `6.4` Spawners / waves (survive missions)
+- [x] `6.4` Spawners / waves (survive missions)
 
-## P7 Story + missions  (5/6)
+## P7 Story + missions  (6/6)
 
 - [x] `7.1` Mission engine (Kill, Collect, Reach, ZoneCount, Survive, Boss, Interact)
 - [x] `7.2` Mission data: 4-5 per planet (main + optional)
 - [x] `7.3` Dialogue box + story scenes (intro, act breaks, ending)
 - [x] `7.4` Hotspots (spring, rune stone, chest, forge, gate) interaction
 - [x] `7.5` Rewards + unlocks + planet progression
-- [ ] `7.6` Optional tasks tracker / journal screen
+- [x] `7.6` Optional tasks tracker / journal screen
 
 ## P8 Solar maps  (3/4)
 
@@ -138,12 +132,12 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 - [ ] `12.4` Minimap *(opt)*
 - [x] `12.5` Credits screen: by Crowelian 2026 + Sonnet
 
-## P13 Polish + ship  (3/8)
+## P13 Polish + ship  (4/8)
 
 - [x] `13.1` Unit tests (sim rules, console parser, mission engine)
 - [x] `13.2` Playtest headless smoke test (sim + frames)
 - [x] `13.3` README with controls + build instructions
-- [ ] `13.4` Final zip of repo + commit + push
+- [x] `13.4` Final zip of repo + commit + push
 - [ ] `13.5` Windows + Linux verified builds *(opt)*
 - [ ] `13.6` Finnish/Norse font + localisation *(opt)*
 - [ ] `13.7` Online multiplayer *(opt)*
