@@ -8,7 +8,7 @@ help [cmd]               Show all commands or help for one command
 clear                    Clear the console output
 echo <text>              Print text
 fps                      Toggle FPS counter
-debug                    Toggle debug overlay (hitboxes, cell info)
+debug                    Toggle debug overlay (mission zones)
 list <what>              List names: weapons | elements | planets | enemies | bosses | missions
 quit                     Exit the game
 
@@ -19,6 +19,7 @@ heal                     Full health
 god                      Toggle invincibility
 ghost                    Toggle no-clip flight (walk through terrain)
 fly                      Toggle infinite jetpack fuel
+infammo                  Toggle infinite ammo (no reloading needed)
 speed <mult>             Run speed multiplier (1 = normal)
 jump <mult>              Jump strength multiplier
 gravity <mult>           Override gravity multiplier for the player (0 = off, 1 = planet normal)
@@ -31,7 +32,7 @@ pos                      Print player cell position
 tp <planet>              Teleport to a planet (loads it). e.g. tp helheim
 warp <x> <y>             Move player to cell x,y
 regen                    Regenerate current planet (fresh terrain, same seed)
-clearworld               Remove all powder (keeps walls border)
+clearworld               Remove all loose powder/liquids/gases (terrain stays)
 unlock <all|planet>      Unlock travel to planet(s) / both systems
 weather <element|off>    Rain an element from the sky. e.g. weather lava
 split <on|off>           Toggle splitscreen (2 players)

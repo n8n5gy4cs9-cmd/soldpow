@@ -165,7 +165,7 @@
    "title": "Game state machine: Boot / Menu / SolarMap / Play / Pause / Story",
    "files": "src/main.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -381,7 +381,7 @@
    "title": "Brush painting tool (sizes, erase, line interpolation) + build mode",
    "files": "src/ui.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -390,7 +390,7 @@
    "title": "Element picker UI (categories, hotkeys)",
    "files": "src/ui.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -435,7 +435,7 @@
    "title": "Creature physics vs grid (walk, step-up, jump, swim, fall damage)",
    "files": "src/entity.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -444,7 +444,7 @@
    "title": "Jetpack with fuel + particles",
    "files": "src/entity.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -453,7 +453,7 @@
    "title": "Mouse aim, weapon rotation, flip",
    "files": "src/player.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -471,7 +471,7 @@
    "title": "Bullets: hitscan-step, tracer, terrain crater, ignite/freeze/acid effects",
    "files": "src/bullet.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -480,7 +480,7 @@
    "title": "Grenades + rocket + explosions that feed the powder sim",
    "files": "src/bullet.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -489,7 +489,7 @@
    "title": "Pickups: ammo, medkit, weapon crates, sampo shards, silver",
    "files": "src/pickup.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -498,7 +498,7 @@
    "title": "Health, death, respawn, blood particles",
    "files": "src/player.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -507,7 +507,7 @@
    "title": "Powder gun (shoots selected element) + sampo_gun (random element)",
    "files": "src/weapons.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -552,7 +552,7 @@
    "title": "Environment hazards (ember rain, acid rain, snow, lightning, regolith dust)",
    "files": "src/planets.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -570,7 +570,7 @@
    "title": "Parallax background renderer",
    "files": "src/render.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -579,7 +579,7 @@
    "title": "Camera (zoom, follow, clamp) per viewport",
    "files": "src/render.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -588,7 +588,7 @@
    "title": "Enemy AI (patrol, chase, shoot, melee, flying)",
    "files": "src/enemy.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -597,7 +597,7 @@
    "title": "10 enemy kinds",
    "files": "src/enemy.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -606,7 +606,7 @@
    "title": "9 bosses with patterns",
    "files": "src/boss.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -624,7 +624,7 @@
    "title": "Mission engine (Kill, Collect, Reach, ZoneCount, Survive, Boss, Interact)",
    "files": "src/missions.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -642,7 +642,7 @@
    "title": "Dialogue box + story scenes (intro, act breaks, ending)",
    "files": "src/story.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -651,7 +651,7 @@
    "title": "Hotspots (spring, rune stone, chest, forge, gate) interaction",
    "files": "src/hotspot.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -660,7 +660,7 @@
    "title": "Rewards + unlocks + planet progression",
    "files": "src/missions.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -678,7 +678,7 @@
    "title": "Norse solar map screen (Sol + 9 worlds)",
    "files": "src/map.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -687,7 +687,7 @@
    "title": "Kalevala system map (5 planets)",
    "files": "src/map.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -696,7 +696,7 @@
    "title": "Aurora Gate / Bifrost travel between systems",
    "files": "src/map.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -714,7 +714,7 @@
    "title": "Dev console UI (` or F1), history, tab-complete",
    "files": "src/console.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -723,7 +723,7 @@
    "title": "Command set (give, tp, spawn, god, paint, ...) matching commands.txt",
    "files": "src/console.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -732,7 +732,7 @@
    "title": "Cheat menu (F2) clickable toggles",
    "files": "src/ui.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -741,7 +741,7 @@
    "title": "commands.txt kept in sync with code (self-test)",
    "files": "tests",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -750,7 +750,7 @@
    "title": "SFX manager with per-event mapping + volume",
    "files": "src/audio.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -759,7 +759,7 @@
    "title": "Music per scene/planet with crossfade-less loop",
    "files": "src/audio.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -768,7 +768,7 @@
    "title": "Two viewports sharing one world",
    "files": "src/render.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -777,7 +777,7 @@
    "title": "P2 keyboard controls",
    "files": "src/input.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -786,7 +786,7 @@
    "title": "Co-op campaign + versus deathmatch",
    "files": "src/main.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -804,7 +804,7 @@
    "title": "Main menu (campaign, sandbox, versus, settings, quit)",
    "files": "src/menu.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -813,7 +813,7 @@
    "title": "HUD (hp, fuel, ammo, weapon, mission tracker, element)",
    "files": "src/ui.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -822,7 +822,7 @@
    "title": "Pause menu + settings (volume, zoom, keys)",
    "files": "src/menu.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -840,7 +840,7 @@
    "title": "Credits screen: by Crowelian 2026 + Sonnet",
    "files": "src/menu.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {

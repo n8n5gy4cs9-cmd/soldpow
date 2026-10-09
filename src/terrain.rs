@@ -134,7 +134,7 @@ pub fn generate(w: &mut World, p: &PlanetDef) -> Generated {
         if g.sea.is_some() { y = y.min(sea_y - 5); }
         if g.islands { y = y.max(hh / 2); }
         for x in x0..=x1 {
-            for yy in (y - 60).max(3)..y { w.set(x, yy, EMPTY); }
+            for yy in (y - 60).max(3)..y { w.set(x, yy, EMPTY); let i = w.idx(x, yy); w.bg[i] = 0; }
             for yy in y..surface[x as usize].max(y) + 1 { if yy < hh - 2 { let d = yy - y; w.set(x, yy, if d < g.top_depth { g.top } else { g.sub }); } }
             if surface[x as usize] > y + 0 { for yy in y..=surface[x as usize] { if yy < hh - 2 { let i = w.idx(x, yy); w.bg[i] = if yy > y + 1 { 1 } else { 0 }; } } }
             surface[x as usize] = y;
@@ -219,7 +219,7 @@ pub fn generate(w: &mut World, p: &PlanetDef) -> Generated {
     // cave shard spots
     for _ in 0..600 { if shard_spots.len() >= 11 { break; } let x = rng.range(30, ww - 30); let y = rng.range(surface[x as usize] + 25, hh - 20); if w.get(x, y) == EMPTY && w.get(x, y + 1) != EMPTY && is_solid_for_body(w.get(x, y + 1)) { shard_spots.push((x, y - 3)); } }
     // keep spawn area safe
-    enemy_spawns.retain(|&(x, _)| (x - spawn.0).abs() > 80);
+    enemy_spawns.retain(|&(x, _)| (x - spawn.0).abs() > 260);
     w.border();
     Generated { spawn, hotspots, zones, enemy_spawns, shard_spots, surface }
 }

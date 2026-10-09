@@ -104,8 +104,9 @@ impl World {
         match el { WALL | RUNE => 0.0, METAL | GOLD => 0.4, CLONE | VOID => 0.4, BRICK => 0.6, STONE => 0.75, GLASS => 0.9, _ => 1.0 }
     }
     /// Instant blast: clears cells in a radius (hard materials survive near the rim), leaves fire/smoke.
-    pub fn explode(&mut self, cx: i32, cy: i32, r: i32) {
-        self.events.push(SimEvent::Explosion { x: cx, y: cy, r });
+    pub fn explode(&mut self, cx: i32, cy: i32, r: i32) { self.explode_ex(cx, cy, r, true) }
+    pub fn explode_ex(&mut self, cx: i32, cy: i32, r: i32, emit: bool) {
+        if emit { self.events.push(SimEvent::Explosion { x: cx, y: cy, r }); }
         let rf = r as f32;
         for dy in -r..=r { for dx in -r..=r {
             let d = ((dx * dx + dy * dy) as f32).sqrt();
@@ -163,7 +164,21 @@ impl World {
         if self.pending.len() > 400 { self.pending.truncate(400); }
     }
 
+    /// Weather droplets: aux==2. They fall straight and resolve on landing.
+    fn droplet(&mut self, x: i32, y: i32, c: Cell) {
+        let below = self.get(x, y + 1);
+        if below == EMPTY || (below != c.el && is_fluid(below) && density(below) < density(c.el)) { self.swap_xy(x, y, x, y + 1); return; }
+        let r = self.rnd() % 100;
+        match c.el {
+            LAVA => { self.ignite(x, y + 1); if below == WATER { self.set(x, y + 1, STEAM); } self.fire_at(x, y, 14, 10); }
+            ACID => { if r < 70 { self.set(x, y, EMPTY); } else { let i = self.idx(x, y); self.cells[i].aux = 0; } }
+            SNOW => { if r < 80 { self.set(x, y, EMPTY); } else { let i = self.idx(x, y); self.cells[i].aux = 0; } }
+            _ => { if r < 85 { self.set(x, y, EMPTY); } else { let i = self.idx(x, y); self.cells[i].aux = 0; } }
+        }
+    }
+
     fn update(&mut self, x: i32, y: i32, c: Cell) {
+        if c.aux == 2 && matches!(c.el, LAVA | ACID | SNOW | WATER) { self.droplet(x, y, c); return; }
         match c.el {
             SAND | DIRT | ASH | COAL | GUNPOWDER => self.powder(x, y, c.el),
             SALT => { self.powder(x, y, SALT); if self.rnd() % 35 == 0 && self.near4(x, y, WATER) { self.set(x, y, EMPTY); } }
