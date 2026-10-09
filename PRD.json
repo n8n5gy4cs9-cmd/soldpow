@@ -174,7 +174,7 @@
    "title": "Asset loader with graceful fallbacks (missing file => placeholder, never crash)",
    "files": "src/assets.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -183,7 +183,7 @@
    "title": "Settings + save file (progress, unlocks, silver, completed missions)",
    "files": "src/save.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -462,7 +462,7 @@
    "title": "Weapon table (16+ weapons incl vainamoinen_gun)",
    "files": "src/weapons.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -534,7 +534,7 @@
    "title": "Noise + terrain generator (surface, caves, ores, pools, bedrock)",
    "files": "src/terrain.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -543,7 +543,7 @@
    "title": "Planet data: 9 Norse + 5 Kalevala planets (gravity, palette, hazards, enemies)",
    "files": "src/planets.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -561,7 +561,7 @@
    "title": "Structures (huts, ruins, forges, basins) + hotspot placement",
    "files": "src/terrain.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {
@@ -633,7 +633,7 @@
    "title": "Mission data: 4-5 per planet (main + optional)",
    "files": "src/missions.rs",
    "optional": false,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {

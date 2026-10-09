@@ -2,7 +2,7 @@
 
 _Generated from PRD.json by `python3 tools/task.py sync` - do not hand-edit; use `tools/task.py done <id>`._
 
-**Progress: 29/93 total | 29/80 required | updated 2026-10-09**
+**Progress: 36/93 total | 36/80 required | updated 2026-10-09**
 
 Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optional.
 
@@ -11,10 +11,10 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 ## NEXT UP
 
 - `1.2` Game state machine: Boot / Menu / SolarMap / Play / Pause / Story
-- `1.3` Asset loader with graceful fallbacks (missing file => placeholder, never crash)
-- `1.4` Settings + save file (progress, unlocks, silver, completed missions)
 - `1.5` macOS .app bundle script (tools/bundle_macos.sh) + Win/Linux build notes
 - `3.10` Brush painting tool (sizes, erase, line interpolation) + build mode
+- `3.11` Element picker UI (categories, hotkeys)
+- `4.1` Creature physics vs grid (walk, step-up, jump, swim, fall damage)
 
 ## P0 Planning & docs  (8/8)
 
@@ -27,12 +27,12 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 - [x] `0.7` commands.txt (console commands list)
 - [x] `0.8` HANDOFF.md ("continue here" for next AI / next session)
 
-## P1 Project foundation  (1/6)
+## P1 Project foundation  (3/6)
 
 - [x] `1.1` Cargo project (macroquad), release profile tuned for M1 Max
 - [ ] `1.2` Game state machine: Boot / Menu / SolarMap / Play / Pause / Story
-- [ ] `1.3` Asset loader with graceful fallbacks (missing file => placeholder, never crash)
-- [ ] `1.4` Settings + save file (progress, unlocks, silver, completed missions)
+- [x] `1.3` Asset loader with graceful fallbacks (missing file => placeholder, never crash)
+- [x] `1.4` Settings + save file (progress, unlocks, silver, completed missions)
 - [ ] `1.5` macOS .app bundle script (tools/bundle_macos.sh) + Win/Linux build notes
 - [ ] `1.6` GitHub Actions CI building mac/win/linux *(opt)*
 
@@ -67,12 +67,12 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 - [ ] `3.14` Temperature simulation (Powder Toy heat model) *(opt)*
 - [ ] `3.15` Electricity (spark/metal/battery) *(opt)*
 
-## P4 Soldat gameplay  (0/11)
+## P4 Soldat gameplay  (1/11)
 
 - [ ] `4.1` Creature physics vs grid (walk, step-up, jump, swim, fall damage)
 - [ ] `4.2` Jetpack with fuel + particles
 - [ ] `4.3` Mouse aim, weapon rotation, flip
-- [ ] `4.4` Weapon table (16+ weapons incl vainamoinen_gun)
+- [x] `4.4` Weapon table (16+ weapons incl vainamoinen_gun)
 - [ ] `4.5` Bullets: hitscan-step, tracer, terrain crater, ignite/freeze/acid effects
 - [ ] `4.6` Grenades + rocket + explosions that feed the powder sim
 - [ ] `4.7` Pickups: ammo, medkit, weapon crates, sampo shards, silver
@@ -81,12 +81,12 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 - [ ] `4.10` Crouch / prone *(opt)*
 - [ ] `4.11` Ragdoll death *(opt)*
 
-## P5 Worlds  (0/6)
+## P5 Worlds  (3/6)
 
-- [ ] `5.1` Noise + terrain generator (surface, caves, ores, pools, bedrock)
-- [ ] `5.2` Planet data: 9 Norse + 5 Kalevala planets (gravity, palette, hazards, enemies)
+- [x] `5.1` Noise + terrain generator (surface, caves, ores, pools, bedrock)
+- [x] `5.2` Planet data: 9 Norse + 5 Kalevala planets (gravity, palette, hazards, enemies)
 - [ ] `5.3` Environment hazards (ember rain, acid rain, snow, lightning, regolith dust)
-- [ ] `5.4` Structures (huts, ruins, forges, basins) + hotspot placement
+- [x] `5.4` Structures (huts, ruins, forges, basins) + hotspot placement
 - [ ] `5.5` Parallax background renderer
 - [ ] `5.6` Camera (zoom, follow, clamp) per viewport
 
@@ -97,10 +97,10 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 - [ ] `6.3` 9 bosses with patterns
 - [ ] `6.4` Spawners / waves (survive missions)
 
-## P7 Story + missions  (0/6)
+## P7 Story + missions  (1/6)
 
 - [ ] `7.1` Mission engine (Kill, Collect, Reach, ZoneCount, Survive, Boss, Interact)
-- [ ] `7.2` Mission data: 4-5 per planet (main + optional)
+- [x] `7.2` Mission data: 4-5 per planet (main + optional)
 - [ ] `7.3` Dialogue box + story scenes (intro, act breaks, ending)
 - [ ] `7.4` Hotspots (spring, rune stone, chest, forge, gate) interaction
 - [ ] `7.5` Rewards + unlocks + planet progression
