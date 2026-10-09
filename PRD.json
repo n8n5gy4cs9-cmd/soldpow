@@ -408,7 +408,7 @@
    "title": "Sandbox save/load of world (png/bin)",
    "files": "src/save.rs",
    "optional": true,
-   "status": "todo",
+   "status": "done",
    "notes": ""
   },
   {

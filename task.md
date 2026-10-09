@@ -2,7 +2,7 @@
 
 _Generated from PRD.json by `python3 tools/task.py sync` - do not hand-edit; use `tools/task.py done <id>`._
 
-**Progress: 76/93 total | 75/80 required | updated 2026-10-09**
+**Progress: 77/93 total | 75/80 required | updated 2026-10-09**
 
 Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optional.
 
@@ -49,7 +49,7 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 - [x] `2.9` Placeholder music (synthesised kantele-style loops)
 - [x] `2.10` assets.md auto-generated from manifest (tools/gen_assets.py)
 
-## P3 Powder sim (Powder Toy side)  (12/15)
+## P3 Powder sim (Powder Toy side)  (13/15)
 
 - [x] `3.1` Element table (id, name, console key, colour, density, flags)
 - [x] `3.2` Grid world + double-buffer-free update with parity flag
@@ -63,7 +63,7 @@ Legend: `[x]` done, `[~]` in progress, `[ ]` to do, `[!]` blocked, *(opt)* optio
 - [x] `3.10` Brush painting tool (sizes, erase, line interpolation) + build mode
 - [x] `3.11` Element picker UI (categories, hotkeys)
 - [x] `3.12` Sim pause / step / speed
-- [ ] `3.13` Sandbox save/load of world (png/bin) *(opt)*
+- [x] `3.13` Sandbox save/load of world (png/bin) *(opt)*
 - [ ] `3.14` Temperature simulation (Powder Toy heat model) *(opt)*
 - [ ] `3.15` Electricity (spark/metal/battery) *(opt)*
 

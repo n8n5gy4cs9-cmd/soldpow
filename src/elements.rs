@@ -33,7 +33,31 @@ pub const BRICK: u8 = 29;
 pub const CLONE: u8 = 30;
 pub const VOID: u8 = 31;
 pub const THUNDER: u8 = 32;
-pub const NUM_ELEMENTS: usize = 33;
+pub const DUST: u8 = 33;
+pub const BCOAL: u8 = 34;
+pub const SPONGE: u8 = 35;
+pub const SALTWATER: u8 = 36;
+pub const CO2: u8 = 37;
+pub const LN2: u8 = 38;
+pub const WAX: u8 = 39;
+pub const MWAX: u8 = 40;
+pub const C4: u8 = 41;
+pub const FIREWORKS: u8 = 42;
+pub const BOMB: u8 = 43;
+pub const FUSE: u8 = 44;
+pub const FUSEPOWDER: u8 = 45;
+pub const BGLASS: u8 = 46;
+pub const HYDROGEN: u8 = 47;
+pub const OXYGEN: u8 = 48;
+pub const LIFE: u8 = 49;
+pub const WIRE: u8 = 50;
+pub const SPARK: u8 = 51;
+pub const BATTERY: u8 = 52;
+pub const DIAMOND: u8 = 53;
+pub const SEED: u8 = 54;
+pub const CAUSTIC: u8 = 55;
+pub const EMBER: u8 = 56;
+pub const NUM_ELEMENTS: usize = 57;
 
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub enum Cat { Empty, Powder, Liquid, Gas, Solid, Special }
@@ -87,6 +111,30 @@ pub static ELEMENTS: [ElDef; NUM_ELEMENTS] = [
     e!("clone", "Clone", Special, (204, 164, 40), 255, 100, 150),
     e!("void", "Void", Special, (24, 8, 36), 255, 100, 150),
     e!("thunder", "Thunder", Special, (255, 255, 130), 255, -5, 0),
+    e!("dust", "Dust", Powder, (255, 224, 160), 255, 4, 0),
+    e!("bcoal", "Broken coal", Powder, (60, 60, 60), 255, 14, 5),
+    e!("sponge", "Sponge", Solid, (255, 190, 48), 255, 100, 20),
+    e!("saltwater", "Salt water", Liquid, (64, 80, 240), 235, 11, 0),
+    e!("co2", "Carbon dioxide", Gas, (150, 150, 150), 120, 3, 0),
+    e!("ln2", "Liquid nitrogen", Liquid, (128, 160, 223), 240, 9, 0),
+    e!("wax", "Wax", Solid, (240, 240, 187), 255, 100, 10),
+    e!("moltenwax", "Molten wax", Liquid, (224, 224, 170), 250, 7, 0),
+    e!("c4", "C-4", Solid, (208, 128, 224), 255, 100, 10),
+    e!("fireworks", "Fireworks", Powder, (255, 160, 64), 255, 12, 0),
+    e!("bomb", "Bomb", Powder, (255, 190, 40), 255, 13, 0),
+    e!("fuse", "Fuse", Solid, (10, 100, 6), 255, 100, 19),
+    e!("fusepowder", "Fuse powder", Powder, (99, 173, 95), 255, 10, 0),
+    e!("brokenglass", "Broken glass", Powder, (150, 170, 180), 255, 15, 0),
+    e!("hydrogen", "Hydrogen", Gas, (80, 112, 255), 120, -6, 0),
+    e!("oxygen", "Oxygen", Gas, (128, 160, 255), 110, -2, 0),
+    e!("life", "Game of Life", Special, (12, 172, 0), 255, 100, 0),
+    e!("wire", "Wire", Solid, (200, 110, 60), 255, 100, 120),
+    e!("spark", "Spark", Special, (255, 255, 128), 255, 100, 0),
+    e!("battery", "Battery", Solid, (140, 140, 20), 255, 100, 100),
+    e!("diamond", "Diamond", Solid, (190, 240, 250), 255, 100, 255),
+    e!("seed", "Seed", Powder, (136, 231, 136), 255, 9, 0),
+    e!("caustic", "Caustic gas", Gas, (128, 255, 160), 140, -2, 0),
+    e!("ember", "Ember", Powder, (255, 242, 136), 255, 3, 0),
 ];
 
 #[inline] pub fn def(el: u8) -> &'static ElDef { &ELEMENTS[(el as usize).min(NUM_ELEMENTS - 1)] }
@@ -99,16 +147,17 @@ pub fn by_key(key: &str) -> Option<u8> {
 /// Obstacle for creatures: solids and powders.
 #[inline] pub fn is_solid_for_body(el: u8) -> bool { matches!(cat(el), Cat::Solid | Cat::Powder) || el == CLONE || el == VOID }
 #[inline] pub fn is_fluid(el: u8) -> bool { matches!(cat(el), Cat::Liquid | Cat::Gas) }
-pub fn is_flammable(el: u8) -> bool { matches!(el, WOOD | PLANT | OIL | COAL | GUNPOWDER | METHANE | NITRO | TNT) }
-pub fn is_explosive(el: u8) -> bool { matches!(el, GUNPOWDER | NITRO | METHANE | TNT) }
+pub fn is_flammable(el: u8) -> bool { matches!(el, WOOD | PLANT | OIL | COAL | GUNPOWDER | METHANE | NITRO | TNT | DUST | BCOAL | WAX | MWAX | C4 | FUSE | FUSEPOWDER | HYDROGEN | BOMB | FIREWORKS) }
+pub fn is_explosive(el: u8) -> bool { matches!(el, GUNPOWDER | NITRO | METHANE | TNT | C4 | HYDROGEN | BOMB) }
+pub fn is_conductor(el: u8) -> bool { matches!(el, WIRE | METAL | SALTWATER | BATTERY | GOLD) }
 
 /// Picker categories for the UI.
 pub const PICKER: &[(&str, &[u8])] = &[
-    ("Powders", &[SAND, DIRT, SALT, SNOW, ASH, GUNPOWDER, COAL]),
-    ("Liquids", &[WATER, OIL, LAVA, ACID, NITRO, BLOOD, MERCURY]),
-    ("Gases", &[SMOKE, STEAM, METHANE, FIRE]),
-    ("Solids", &[WALL, STONE, WOOD, METAL, GLASS, ICE, PLANT, TNT, GOLD, RUNE, BRICK]),
-    ("Special", &[CLONE, VOID, THUNDER]),
+    ("Powders", &[SAND, DIRT, SALT, SNOW, ASH, GUNPOWDER, COAL, DUST, BCOAL, FUSEPOWDER, BGLASS, SEED, FIREWORKS, BOMB, EMBER]),
+    ("Liquids", &[WATER, OIL, LAVA, ACID, NITRO, BLOOD, MERCURY, SALTWATER, LN2, MWAX]),
+    ("Gases", &[SMOKE, STEAM, METHANE, FIRE, CO2, HYDROGEN, OXYGEN, CAUSTIC]),
+    ("Solids", &[WALL, STONE, WOOD, METAL, GLASS, ICE, PLANT, TNT, GOLD, RUNE, BRICK, WAX, C4, FUSE, SPONGE, DIAMOND, WIRE, BATTERY]),
+    ("Special", &[CLONE, VOID, THUNDER, LIFE, SPARK]),
 ];
 
 /// Optional colour overrides: assets/data/elements.txt, lines `key r g b`.

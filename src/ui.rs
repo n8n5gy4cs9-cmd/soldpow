@@ -101,27 +101,32 @@ impl Game {
         }
     }
 
+    pub fn picker_rect(&self) -> (f32, f32, f32, f32) {
+        let cols = 4usize; let mut h = 56.0;
+        for (_, els) in PICKER { h += 22.0 + ((els.len() + cols - 1) / cols) as f32 * 26.0 + 6.0; }
+        (self.screen_w - 372.0, 90.0, 360.0, h)
+    }
+
     pub fn draw_picker(&mut self) {
-        let (w, h) = (360.0, 330.0); let (x, y) = (self.screen_w - w - 16.0, 100.0);
-        panel(x, y, w, h); text("Element picker (click or Tab to close)", x + 10.0, y + 22.0, 17.0, YELLOW);
-        let mut cy = y + 34.0;
+        let (x, y, w, h) = self.picker_rect();
+        panel(x, y, w, h); text("Element picker  (Tab closes)", x + 10.0, y + 22.0, 17.0, YELLOW);
+        let mut cy = y + 32.0;
         for (name, els) in PICKER {
             text(name, x + 10.0, cy + 14.0, 16.0, LIGHTGRAY); cy += 20.0;
-            let mut cx = x + 10.0;
-            for &e in els.iter() {
-                let (bw, bh) = (80.0, 22.0);
-                if cx + bw > x + w - 6.0 { cx = x + 10.0; cy += bh + 3.0; }
-                let hov = inside(cx, cy, bw, bh);
-                draw_rectangle(cx, cy, bw, bh, el_color(&self.assets, e));
-                draw_rectangle_lines(cx, cy, bw, bh, if self.brush.el == e { 3.0 } else if hov { 2.0 } else { 1.0 }, if self.brush.el == e { WHITE } else { BLACK });
+            let (bw, bh) = (82.0, 22.0);
+            for (k, &e) in els.iter().enumerate() {
+                let (cx, ry) = (x + 8.0 + (k % 4) as f32 * (bw + 4.0), cy + (k / 4) as f32 * 26.0);
+                let hov = inside(cx, ry, bw, bh);
+                draw_rectangle(cx, ry, bw, bh, el_color(&self.assets, e));
+                draw_rectangle_lines(cx, ry, bw, bh, if self.brush.el == e { 3.0 } else if hov { 2.0 } else { 1.0 }, if self.brush.el == e { WHITE } else { BLACK });
                 let c = self.assets.colors[e as usize]; let lum = c.0 as f32 * 0.3 + c.1 as f32 * 0.6 + c.2 as f32 * 0.1;
-                text(def(e).name, cx + 3.0, cy + 16.0, 14.0, if lum > 120.0 { BLACK } else { WHITE });
+                let mut nm = def(e).name.to_string(); if nm.len() > 12 { nm.truncate(11); nm.push('.'); }
+                text(&nm, cx + 3.0, ry + 16.0, 14.0, if lum > 120.0 { BLACK } else { WHITE });
                 if hov && is_mouse_button_pressed(MouseButton::Left) { self.brush.el = e; self.brush.build = true; }
-                cx += bw + 4.0;
             }
-            cy += 28.0;
+            cy += ((els.len() + 3) / 4) as f32 * 26.0 + 8.0;
         }
-        text("Brush size: wheel | RMB erase | Clone: paint over a material", x + 10.0, y + h - 10.0, 14.0, GRAY);
+        text("Wheel: brush size | RMB erase | CLONE: paint over a material | SPARK: paint on wire", x + 8.0, y + h - 8.0, 12.0, GRAY);
     }
 
     pub fn draw_journal(&mut self) {

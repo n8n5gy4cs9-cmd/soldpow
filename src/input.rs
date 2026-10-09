@@ -67,7 +67,7 @@ impl Game {
 
     /// Mouse painting for P1 in build mode.
     pub fn build_tool(&mut self, v: &View) {
-        if !self.brush.build || self.input_blocked() || self.ui.picker && crate::ui::inside(self.screen_w - 376.0, 100.0, 360.0, 330.0) { self.brush.last = None; return; }
+        if !self.brush.build || self.input_blocked() || self.ui.picker && { let (x, y, w, h) = self.picker_rect(); crate::ui::inside(x, y, w, h) } { self.brush.last = None; return; }
         let (mx, my) = mouse_position(); let (wx, wy) = v.to_world(mx, my); let (ix, iy) = (wx as i32, wy as i32);
         let down = is_mouse_button_down(MouseButton::Left); let erase = is_mouse_button_down(MouseButton::Right);
         if down || erase {

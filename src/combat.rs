@@ -10,7 +10,7 @@ use macroquad::prelude::*;
 use macroquad::rand::gen_range;
 use std::f32::consts::PI;
 
-const RANDOM_ELEMENTS: [u8; 14] = [SAND, WATER, OIL, LAVA, ACID, SNOW, GUNPOWDER, SALT, DIRT, STEAM, METHANE, MERCURY, NITRO, PLANT];
+const RANDOM_ELEMENTS: [u8; 22] = [SAND, WATER, OIL, LAVA, ACID, SNOW, GUNPOWDER, SALT, DIRT, STEAM, METHANE, MERCURY, NITRO, PLANT, DUST, LN2, FIREWORKS, BOMB, HYDROGEN, SALTWATER, CO2, EMBER];
 
 impl Game {
     // ------------------------------------------------------------------ firing
