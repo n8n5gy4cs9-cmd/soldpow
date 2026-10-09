@@ -9,7 +9,7 @@ clear                    Clear the console output
 echo <text>              Print text
 fps                      Toggle FPS counter
 debug                    Toggle debug overlay (mission zones)
-list <what>              List names: weapons | elements | planets | enemies | bosses | missions
+list <what>              List names: weapons | elements | planets | enemies | bosses | missions | arenas
 quit                     Exit the game
 
 ## Player cheats
@@ -31,7 +31,8 @@ pos                      Print player cell position
 ## World / travel
 tp <planet>              Teleport to a planet (loads it). e.g. tp helheim
 warp <x> <y>             Move player to cell x,y
-regen                    Regenerate current planet (fresh terrain, same seed)
+regen                    Regenerate current planet
+arena <name>             Load an imported Soldat map as an arena, e.g. arena ctf_Ash  (list arenas) (fresh terrain, same seed)
 clearworld               Remove all loose powder/liquids/gases (terrain stays)
 unlock <all|planet>      Unlock travel to planet(s) / both systems
 weather <element|off>    Rain an element from the sky. e.g. weather lava

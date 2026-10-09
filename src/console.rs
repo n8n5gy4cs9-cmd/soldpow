@@ -17,7 +17,7 @@ pub const COMMANDS: &[(&str, &str, &str)] = &[
     ("echo", "<text>", "Print text"),
     ("fps", "", "Toggle FPS counter"),
     ("debug", "", "Toggle debug overlay (zones)"),
-    ("list", "<what>", "List names: weapons | elements | planets | enemies | bosses | missions"),
+    ("list", "<what>", "List names: weapons | elements | planets | enemies | bosses | missions | arenas"),
     ("quit", "", "Exit the game"),
     ("give", "<weapon|all>", "Give a weapon (full ammo), e.g. give vainamoinen_gun"),
     ("ammo", "", "Refill all ammo"),
@@ -36,6 +36,7 @@ pub const COMMANDS: &[(&str, &str, &str)] = &[
     ("tp", "<planet>", "Teleport to a planet (loads it)"),
     ("warp", "<x> <y>", "Move player to cell x,y"),
     ("regen", "", "Regenerate current planet"),
+    ("arena", "<name>", "Load an imported Soldat map (e.g. arena ctf_Ash); see list arenas"),
     ("clearworld", "", "Remove all loose powder/liquids/gases (terrain stays)"),
     ("unlock", "<all|planet>", "Unlock travel to planet(s)"),
     ("weather", "<element|off>", "Rain an element from the sky"),
@@ -65,6 +66,7 @@ fn names(what: &str) -> Vec<String> {
         "enemies" => enemy::ENEMIES.iter().filter(|e| !matches!(e.ai, enemy::Ai::Boss(_))).map(|e| e.key.to_string()).collect(),
         "bosses" => enemy::ENEMIES.iter().filter(|e| matches!(e.ai, enemy::Ai::Boss(_))).map(|e| e.key.to_string()).collect(),
         "missions" => MISSIONS.iter().map(|m| m.id.to_string()).collect(),
+        "arenas" => vec![],
         _ => vec![],
     }
 }
@@ -90,7 +92,7 @@ impl Game {
             "echo" => { let t = parts[1..].join(" "); self.out(t); }
             "fps" => { self.show_fps = !self.show_fps; }
             "debug" => { self.debug = !self.debug; self.out(format!("debug {}", onoff(self.debug))); }
-            "list" => { let n = names(a1); if n.is_empty() { self.out("list weapons|elements|planets|enemies|bosses|missions"); } else { let mut row = String::new(); for s in n { row.push_str(&s); row.push_str("  "); if row.len() > 90 { self.out(row.clone()); row.clear(); } } if !row.is_empty() { self.out(row); } } }
+            "list" => { let n = if a1 == "arenas" { self.assets.arenas.iter().map(|x| x.stem.clone()).collect() } else { names(a1) }; if n.is_empty() { self.out("list weapons|elements|planets|enemies|bosses|missions"); } else { let mut row = String::new(); for s in n { row.push_str(&s); row.push_str("  "); if row.len() > 90 { self.out(row.clone()); row.clear(); } } if !row.is_empty() { self.out(row); } } }
             "quit" => self.quit = true,
             "give" => {
                 if !has_player { return; }
@@ -116,6 +118,7 @@ impl Game {
                 else { self.out(format!("Unknown planet '{}'. Try: list planets", a1)); }
             }
             "warp" => { if has_player { let (x, y) = (num(a1, 100.0), num(a2, 100.0)); let b = &mut self.players[0].body; b.x = x.clamp(5.0, WORLD_W as f32 - 5.0); b.y = y.clamp(25.0, WORLD_H as f32 - 5.0); b.vx = 0.0; b.vy = 0.0; } }
+            "arena" => { let a1l = a1.to_lowercase(); if let Some(i) = self.assets.arenas.iter().position(|x| x.stem.to_lowercase() == a1l || x.name.to_lowercase() == a1l) { let m = if self.mode == Mode::Campaign { Mode::Sandbox } else { self.mode }; let s = self.split; self.land_arena(i, m, s); self.console.open = true; } else { self.out("unknown arena. Try: list arenas"); } }
             "regen" => { let (p, m, s) = (self.planet, self.mode, self.split); self.land(p, m, s); self.console.open = true; }
             "clearworld" => { self.world.clear_loose(); self.out("Loose matter cleared."); }
             "unlock" => {

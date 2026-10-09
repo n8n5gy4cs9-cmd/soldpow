@@ -75,6 +75,10 @@
   {
    "id": "P13",
    "title": "Polish + ship"
+  },
+  {
+   "id": "P14",
+   "title": "Reference-repo integration (Soldat / Powder Toy)"
   }
  ],
  "tasks": [
@@ -408,7 +412,7 @@
    "title": "Sandbox save/load of world (png/bin)",
    "files": "src/save.rs",
    "optional": true,
-   "status": "done",
+   "status": "todo",
    "notes": ""
   },
   {
@@ -911,6 +915,60 @@
    "phase": "P13",
    "title": "Mod loader (assets/mods)",
    "files": ".",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "14.1",
+   "phase": "P14",
+   "title": "Clone references; import 31 real Soldat SFX (CC BY 4.0) with provenance",
+   "files": "",
+   "optional": false,
+   "status": "done",
+   "notes": ""
+  },
+  {
+   "id": "14.2",
+   "phase": "P14",
+   "title": "Soldat .pms map importer + 99 playable arenas + arena picker + `arena` command",
+   "files": "",
+   "optional": false,
+   "status": "done",
+   "notes": ""
+  },
+  {
+   "id": "14.3",
+   "phase": "P14",
+   "title": "24 extra Powder Toy-style elements (life, electricity, fireworks, bombs, sponge, wax, ln2, co2, seeds...) + tests",
+   "files": "",
+   "optional": false,
+   "status": "done",
+   "notes": ""
+  },
+  {
+   "id": "14.4",
+   "phase": "P14",
+   "title": "build.sh / run.sh + docs/MAC_BUILD_FIX.md AI troubleshooting guide",
+   "files": "",
+   "optional": false,
+   "status": "done",
+   "notes": ""
+  },
+  {
+   "id": "14.5",
+   "phase": "P14",
+   "title": "Bots (AI opponents) in Soldat arenas",
+   "files": "",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "14.6",
+   "phase": "P14",
+   "title": "Port Soldat font (Play, OFL) for UI + proper diacritics",
+   "files": "",
    "optional": true,
    "status": "todo",
    "notes": ""

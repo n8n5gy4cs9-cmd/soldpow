@@ -38,15 +38,15 @@ impl Game {
     }
 
     fn draw_view(&self, pi: usize, v: &View) {
-        let p = self.pdef(); let z = v.z;
+        let p = self.pdef(); let z = v.z; let sky = self.sky();
         // sky gradient
         let bands = 24;
         for i in 0..bands {
-            let t = i as f32 / (bands - 1) as f32; let (a, b) = (p.sky[0], p.sky[1]);
+            let t = i as f32 / (bands - 1) as f32; let (a, b) = (sky[0], sky[1]);
             let c = Color::from_rgba((a.0 as f32 + (b.0 as f32 - a.0 as f32) * t) as u8, (a.1 as f32 + (b.1 as f32 - a.1 as f32) * t) as u8, (a.2 as f32 + (b.2 as f32 - a.2 as f32) * t) as u8, 255);
             draw_rectangle(v.x, v.y + v.h * i as f32 / bands as f32, v.w, v.h / bands as f32 + 1.0, c);
         }
-        let dark = p.sky[0].0 as u32 + p.sky[0].1 as u32 + p.sky[0].2 as u32;
+        let dark = sky[0].0 as u32 + sky[0].1 as u32 + sky[0].2 as u32;
         if dark < 200 || p.id == "svartalfheim" {
             for i in 0..90 { let sx = sky_text_hash(i * 2) * v.w; let sy = sky_text_hash(i * 2 + 1) * v.h * 0.8; let tw = ((self.tick as f32 * 0.03 + i as f32).sin() * 0.3 + 0.7).max(0.2); draw_rectangle(v.x + (sx - v.cx * 0.05 * z).rem_euclid(v.w), v.y + sy, 2.0, 2.0, Color::new(1.0, 1.0, 1.0, tw)); }
         }

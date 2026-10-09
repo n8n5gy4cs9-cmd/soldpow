@@ -11,8 +11,11 @@ Windows and Linux build from the same source.
 
 ```bash
 # install Rust: https://rustup.rs
-cargo run --release          # always --release: the powder simulation is slow in debug builds
+./run.sh                     # = cargo run --release (always release: the powder sim is slow in debug builds)
+./build.sh                   # macOS: builds dist/nordSoldPow.app + zip
 ```
+Build trouble on your Mac? See [`docs/MAC_BUILD_FIX.md`](docs/MAC_BUILD_FIX.md) (paste it to an AI together with your error).
+Extra content: **99 original Soldat maps** playable as destructible arenas (Sandbox / Versus -> map screen -> *Soldat arenas*, or console `arena ctf_Ash`).
 
 Options: `--nosound`, `--planet midgard`, `--mode campaign|sandbox|versus`, `--split`, `--console "give all; god"`,
 `--selftest` (headless smoke test), `--dump-docs` (regenerates `docs/MISSIONS.md` and `assets/data/elements.txt`).

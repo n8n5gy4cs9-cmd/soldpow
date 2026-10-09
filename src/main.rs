@@ -1,5 +1,5 @@
 //! nordSoldPow - Powder Toy x Soldat in Nordic / Kalevala myth.  by Crowelian 2026 + Sonnet
-mod ai; mod assets; mod audio; mod bullet; mod combat; mod console; mod elements; mod enemy; mod entity; mod game; mod hotspot; mod input;
+mod ai; mod arena; mod assets; mod audio; mod bullet; mod combat; mod console; mod elements; mod enemy; mod entity; mod game; mod hotspot; mod input;
 mod missions; mod planets; mod play; mod player; mod render; mod save; mod scenes; mod sim; mod story; mod terrain; mod ui; mod weapons;
 
 use macroquad::prelude::*;
@@ -116,6 +116,15 @@ fn selftest(game: &mut game::Game) {
     for _ in 0..1500 { game.tick(); if game.runs[1].done { break; } }
     assert!(game.runs[1].done, "burn mission (progress {})", game.runs[1].progress);
     println!("missions: burn OK");
+    // every imported Soldat arena must load and give valid spawns
+    let n = game.assets.arenas.len(); let mut bad = 0;
+    for i in 0..n {
+        game.land_arena(i, Mode::Versus, true);
+        for _ in 0..30 { game.tick(); }
+        for p in &game.players { if p.body.collides(&game.world, p.body.x, p.body.y) { bad += 1; println!("arena {} spawn inside terrain at ({:.0},{:.0})", game.assets.arenas[i].stem, p.body.x, p.body.y); } }
+    }
+    println!("arenas: {} loaded, {} bad spawns", n, bad);
+    assert!(n >= 90, "expected the imported Soldat arenas in assets/maps");
     println!("selftest OK");
 }
 

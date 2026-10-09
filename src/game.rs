@@ -100,6 +100,8 @@ pub struct Game {
     pub in_game: bool,
     pub mouse_world: (f32, f32),
     pub fullscreen: bool,
+    pub arena: Option<usize>,
+    pub arena_page: usize,
     pub confirm_reset: bool,
 }
 
@@ -118,11 +120,12 @@ impl Game {
             cheats: Cheats::default(), brush: Brush { el: SAND, size: 4, build: false, last: None }, console: Console::default(), ui: UiState::default(), toasts: vec![], radio: vec![],
             kills: 0, kind_kills: HashMap::new(), shake: 0.0, sim_paused: false, sim_speed: 1, step_once: false, weather: None, split: false, zoom, cams: [(0.0, 0.0); 2],
             story: None, boss_spawned: false, boss_alive: false, strikes: vec![], show_fps: false, debug: false, banner: None, versus_target: 15, versus_won: None,
-            screen_w: 1280.0, screen_h: 720.0, quit: false, acc: 0.0, sandbox_planet: 0, audio_jump: false, prev_scene: Scene::Credits, pending: (Mode::Campaign, false), in_game: false, mouse_world: (0.0, 0.0), fullscreen: false, confirm_reset: false,
+            screen_w: 1280.0, screen_h: 720.0, quit: false, acc: 0.0, sandbox_planet: 0, audio_jump: false, prev_scene: Scene::Credits, pending: (Mode::Campaign, false), in_game: false, mouse_world: (0.0, 0.0), fullscreen: false, confirm_reset: false, arena: None, arena_page: 0,
         }
     }
 
-    pub fn pdef(&self) -> &'static PlanetDef { &PLANETS[self.planet] }
+    pub fn pdef(&self) -> &'static PlanetDef { if self.arena.is_some() { &ARENA_DEF } else { &PLANETS[self.planet] } }
+    pub fn sky(&self) -> [(u8, u8, u8); 2] { match self.arena { Some(i) => self.assets.arenas[i].sky, None => self.pdef().sky } }
     pub fn toast(&mut self, s: impl Into<String>) { let s = s.into(); if self.toasts.last().map_or(true, |t| t.0 != s) { self.toasts.push((s, 4.0)); } if self.toasts.len() > 6 { self.toasts.remove(0); } }
     pub fn say(&mut self, who: &str, text: &str) { self.radio.push(Radio { who: who.into(), text: text.into(), t: 9.0 }); if self.radio.len() > 3 { self.radio.remove(0); } }
     pub fn sfx(&mut self, name: &str) { let a = &self.assets; self.audio.sfx(a, name, 1.0); }
@@ -155,7 +158,7 @@ impl Game {
 
     // ------------------------------------------------------------------ landing
     pub fn land(&mut self, planet: usize, mode: Mode, two_players: bool) {
-        self.planet = planet; self.mode = mode; self.split = two_players;
+        self.planet = planet; self.mode = mode; self.split = two_players; self.arena = None;
         let p = &PLANETS[planet];
         self.gen = terrain::generate(&mut self.world, p);
         self.world.seed(0x9E3779B9 ^ p.seed);

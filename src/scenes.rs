@@ -30,7 +30,7 @@ impl Game {
     fn on_scene_enter(&mut self) {
         let a = &self.assets;
         match self.scene { Scene::Title | Scene::Settings | Scene::Credits | Scene::Controls => self.audio.music(a, "menu"), Scene::Map => self.audio.music(a, "map"), Scene::Story => self.audio.music(a, "dark"),
-            Scene::Play => { let m = if self.mode == Mode::Sandbox { "calm" } else { PLANETS[self.planet].music }; self.audio.music(a, m); } }
+            Scene::Play => { let m = if self.mode == Mode::Sandbox { "calm" } else { self.pdef().music }; self.audio.music(a, m); } }
     }
 
     // ------------------------------------------------------------------ play
@@ -153,8 +153,31 @@ impl Game {
     }
 
     // ------------------------------------------------------------------ solar map
+    fn scene_arenas(&mut self) {
+        let (w, h) = (self.screen_w, self.screen_h);
+        text_c("SOLDAT ARENAS", w / 2.0, 44.0, 40.0, COL_GOLD);
+        text_c("The original Soldat maps (CC BY 4.0), rasterised into powder - everything is destructible. Click to play.", w / 2.0, 70.0, 17.0, LIGHTGRAY);
+        let n = self.assets.arenas.len(); let (cols, rows) = (4usize, 3usize); let per = cols * rows; let pages = (n + per - 1) / per.max(1);
+        self.arena_page = self.arena_page.min(pages.saturating_sub(1));
+        let (cw, ch) = (((w - 60.0) / cols as f32).min(300.0), ((h - 220.0) / rows as f32).min(190.0)); let (x0, y0) = ((w - cw * cols as f32) / 2.0, 100.0);
+        for k in 0..per { let i = self.arena_page * per + k; if i >= n { break; }
+            let (cx, cy) = (x0 + (k % cols) as f32 * cw, y0 + (k / cols) as f32 * ch); let hov = inside(cx + 4.0, cy + 4.0, cw - 8.0, ch - 8.0);
+            draw_rectangle(cx + 4.0, cy + 4.0, cw - 8.0, ch - 8.0, if hov { Color::new(0.3, 0.25, 0.1, 0.9) } else { Color::new(0.08, 0.08, 0.14, 0.85) }); draw_rectangle_lines(cx + 4.0, cy + 4.0, cw - 8.0, ch - 8.0, 2.0, if hov { COL_GOLD } else { Color::new(0.4, 0.35, 0.2, 1.0) });
+            let stem = self.assets.arenas[i].stem.clone();
+            if let Some(t) = self.assets.tex(&format!("maps/{}_thumb", stem)) { let s = ((cw - 24.0) / t.width()).min((ch - 46.0) / t.height()); draw_texture_ex(t, cx + (cw - t.width() * s) / 2.0, cy + 10.0, WHITE, DrawTextureParams { dest_size: Some(vec2(t.width() * s, t.height() * s)), ..Default::default() }); }
+            text_c(&self.assets.arenas[i].name, cx + cw / 2.0, cy + ch - 14.0, 19.0, WHITE);
+            if hov && is_mouse_button_pressed(MouseButton::Left) { let (mode, two) = if self.in_game { (self.mode, self.split) } else { self.pending }; let mode = if mode == Mode::Campaign { Mode::Sandbox } else { mode }; self.sfx("gate"); self.land_arena(i, mode, two); return; }
+        }
+        let by = h - 70.0;
+        if button(w / 2.0 - 230.0, by, 100.0, 40.0, "< Prev") && self.arena_page > 0 { self.arena_page -= 1; }
+        text_c(&format!("page {}/{}   ({} maps)", self.arena_page + 1, pages.max(1), n), w / 2.0, by + 27.0, 20.0, WHITE);
+        if button(w / 2.0 + 130.0, by, 100.0, 40.0, "Next >") && self.arena_page + 1 < pages { self.arena_page += 1; }
+        if button(w - 250.0, by, 230.0, 40.0, "Back to planets") || is_key_pressed(KeyCode::Escape) { self.ui.map_sys = 0; }
+    }
+
     fn scene_map(&mut self) {
         let (w, h) = (self.screen_w, self.screen_h);
+        if self.ui.map_sys == 2 { self.scene_arenas(); return; }
         let sys = self.ui.map_sys; let (cx, cy) = (w / 2.0, h / 2.0 + 10.0); let r = (w * 0.5).min(h * 0.5) * 0.82;
         for i in 0..150 { let x = (i as f32 * 97.31).rem_euclid(w); let y = (i as f32 * 53.77).rem_euclid(h); draw_rectangle(x, y, 2.0, 2.0, Color::new(1.0, 1.0, 1.0, 0.2 + (i % 5) as f32 * 0.1)); }
         text_c(&format!("{} SYSTEM", if sys == 0 { "SOL - NORSE" } else { "PAIVATAR - KALEVALA" }), w / 2.0, 44.0, 40.0, COL_GOLD);
@@ -185,6 +208,7 @@ impl Game {
         // buttons
         if (self.save.gate_open || self.cheats.unlock_all || self.ui.free_pick) && button(w - 330.0, h - 130.0, 310.0, 40.0, if sys == 0 { "Aurora Gate -> Kalevala system" } else { "Bifrost Gate -> Sol system" }) { self.ui.map_sys = 1 - sys; self.sfx("gate"); }
         else if sys == 0 && !self.save.gate_open && !self.ui.free_pick { text("Aurora Gate: dormant (clear Asgard)", w - 330.0, h - 105.0, 16.0, GRAY); }
+        if self.ui.free_pick && !self.assets.arenas.is_empty() && button(w - 330.0, h - 180.0, 310.0, 40.0, "Soldat arenas (original maps)") { self.ui.map_sys = 2; self.sfx("ui_open"); }
         if button(w - 330.0, h - 80.0, 310.0, 40.0, if self.in_game { "Back to game" } else { "Back to title" }) || is_key_pressed(KeyCode::Escape) { if self.in_game { self.scene = Scene::Play; } else { self.scene = Scene::Title; } }
         text(&format!("Shards {}/14   Silver {}", self.save.shards, self.save.silver), 20.0, 30.0, 22.0, WHITE);
     }

@@ -11,6 +11,22 @@ pub struct Assets {
     pub sounds: HashMap<String, Sound>,
     pub colors: [(u8, u8, u8); crate::elements::NUM_ELEMENTS],
     pub sound_enabled: bool,
+    pub arenas: Vec<ArenaInfo>,
+}
+
+/// Metadata of an imported Soldat map (assets/maps/<stem>.txt).
+#[derive(Clone, Debug, Default)]
+pub struct ArenaInfo { pub stem: String, pub name: String, pub title: String, pub sky: [(u8, u8, u8); 2], pub spawns: Vec<(i32, i32, i32)>, pub size: (i32, i32), pub medikits: u32, pub grenades: u32 }
+
+fn parse_arena(stem: &str, text: &str) -> ArenaInfo {
+    let mut a = ArenaInfo { stem: stem.to_string(), name: stem.to_string(), title: String::new(), sky: [(60, 90, 150), (170, 200, 230)], ..Default::default() };
+    for line in text.lines() {
+        let Some((k, v)) = line.split_once('=') else { continue };
+        let nums = |s: &str| s.split(',').filter_map(|x| x.trim().parse::<i32>().ok()).collect::<Vec<_>>();
+        match k { "name" => a.title = v.trim().to_string(), "sky" => { let n = nums(v); if n.len() >= 6 { a.sky = [(n[0] as u8, n[1] as u8, n[2] as u8), (n[3] as u8, n[4] as u8, n[5] as u8)]; } } "size" => { let n = nums(v); if n.len() == 2 { a.size = (n[0], n[1]); } } "medikits" => a.medikits = v.trim().parse().unwrap_or(0), "grenades" => a.grenades = v.trim().parse().unwrap_or(0),
+            "spawns" => { for part in v.split(';') { let n = nums(part); if n.len() == 3 { a.spawns.push((n[0], n[1], n[2])); } } } _ => {} }
+    }
+    a
 }
 
 pub fn find_dir() -> PathBuf {
@@ -42,7 +58,7 @@ fn walk(dir: &Path, base: &Path, out: &mut Vec<(String, PathBuf)>) {
 impl Assets {
     pub async fn load(sound_enabled: bool) -> Assets {
         let dir = find_dir();
-        let mut a = Assets { dir: dir.clone(), textures: HashMap::new(), sounds: HashMap::new(), colors: [(0, 0, 0); crate::elements::NUM_ELEMENTS], sound_enabled };
+        let mut a = Assets { dir: dir.clone(), textures: HashMap::new(), sounds: HashMap::new(), colors: [(0, 0, 0); crate::elements::NUM_ELEMENTS], sound_enabled, arenas: Vec::new() };
         for (i, d) in crate::elements::ELEMENTS.iter().enumerate() { a.colors[i] = d.color; }
         if let Ok(t) = std::fs::read_to_string(dir.join("data/elements.txt")) { crate::elements::load_overrides(&t, &mut a.colors); }
         let mut files = Vec::new(); walk(&dir, &dir, &mut files);
@@ -50,6 +66,11 @@ impl Assets {
         for (n, (key, path)) in files.iter().enumerate() {
             let ext = path.extension().and_then(|e| e.to_str()).unwrap_or("").to_ascii_lowercase();
             let ps = path.to_string_lossy().to_string();
+            if key.starts_with("maps/") {   // arena maps are decoded on demand (they are element maps, not images to draw)
+                if ext == "txt" { if let Ok(t) = std::fs::read_to_string(path) { let stem = key.trim_start_matches("maps/"); a.arenas.push(parse_arena(stem, &t)); } }
+                else if ext == "png" && key.ends_with("_thumb") { if let Ok(t) = load_texture(&ps).await { t.set_filter(FilterMode::Nearest); a.textures.insert(key.clone(), t); } }
+                continue;
+            }
             match ext.as_str() {
                 "png" => { if let Ok(t) = load_texture(&ps).await { t.set_filter(FilterMode::Nearest); a.textures.insert(key.clone(), t); } }
                 "wav" | "ogg" if sound_enabled => {
@@ -65,6 +86,7 @@ impl Assets {
                 next_frame().await;
             }
         }
+        a.arenas.sort_by(|x, y| x.name.to_lowercase().cmp(&y.name.to_lowercase()));
         a
     }
     pub fn tex(&self, key: &str) -> Option<&Texture2D> { self.textures.get(key) }

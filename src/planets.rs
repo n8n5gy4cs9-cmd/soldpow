@@ -109,6 +109,11 @@ pub static PLANETS: [PlanetDef; 14] = [
         desc: "Ilmarinen's forge world, where the Sampo was made - and must be made again." },
 ];
 
+/// Pseudo-planet used while playing an imported Soldat arena (see arena.rs).
+pub static ARENA_DEF: PlanetDef = PlanetDef { id: "arena", name: "Soldat Arena", system: 2, analog: "Imported Soldat map", gravity: 1.0, sky: [(60, 90, 150), (170, 200, 230)], hazard: Hazard::None,
+    gen: GenParams { base: 0.5, amp: 0.0, top: STONE, sub: STONE, deep: STONE, top_depth: 3, caves: 0.0, ores: &[], sea: None, cave_pool: None, islands: false, craters: false, trees: 0, cave_gas: false },
+    enemies: &[], enemy_count: 0, boss: None, music: "norse", orbit: (0.0, 0.0), after: &[], tier: 4, seed: 1, gate: false, sauna: false, desc: "A map from the original Soldat, rasterised into powder." };
+
 pub fn by_id(id: &str) -> Option<usize> { PLANETS.iter().position(|p| p.id == id) }
 pub fn system_name(s: u8) -> &'static str { if s == 0 { "Sol (Norse)" } else { "Paivatar (Kalevala)" } }
 pub fn star_id(s: u8) -> &'static str { if s == 0 { "sol" } else { "paivatar" } }

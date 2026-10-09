@@ -95,6 +95,7 @@ impl Game {
     pub fn respawn_player(&mut self, pi: usize) {
         let (sx, sy) = self.gen.spawn;
         let mut pos = (sx as f32 + pi as f32 * 10.0, sy as f32);
+        if self.arena.is_some() { pos = self.arena_spawn(pi); }
         if self.mode == Mode::Versus { let x = if pi == 0 { 0.07 } else { 0.9 } * WORLD_W as f32; pos = (x, self.gen.surface[x as usize] as f32 - 2.0); }
         else if self.players.len() > 1 { let o = 1 - pi; if self.players[o].alive { pos = (self.players[o].body.x, self.players[o].body.y); } }
         let p = &mut self.players[pi];

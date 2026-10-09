@@ -57,7 +57,10 @@ pub const DIAMOND: u8 = 53;
 pub const SEED: u8 = 54;
 pub const CAUSTIC: u8 = 55;
 pub const EMBER: u8 = 56;
-pub const NUM_ELEMENTS: usize = 57;
+pub const PACKED: u8 = 57;
+pub const TURF: u8 = 58;
+pub const SANDSTONE: u8 = 59;
+pub const NUM_ELEMENTS: usize = 60;
 
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub enum Cat { Empty, Powder, Liquid, Gas, Solid, Special }
@@ -135,6 +138,9 @@ pub static ELEMENTS: [ElDef; NUM_ELEMENTS] = [
     e!("seed", "Seed", Powder, (136, 231, 136), 255, 9, 0),
     e!("caustic", "Caustic gas", Gas, (128, 255, 160), 140, -2, 0),
     e!("ember", "Ember", Powder, (255, 242, 136), 255, 3, 0),
+    e!("packed", "Packed earth", Solid, (116, 84, 56), 255, 100, 30),
+    e!("turf", "Turf", Solid, (70, 150, 70), 255, 100, 10),
+    e!("sandstone", "Sandstone", Solid, (214, 186, 120), 255, 100, 40),
 ];
 
 #[inline] pub fn def(el: u8) -> &'static ElDef { &ELEMENTS[(el as usize).min(NUM_ELEMENTS - 1)] }
@@ -156,7 +162,7 @@ pub const PICKER: &[(&str, &[u8])] = &[
     ("Powders", &[SAND, DIRT, SALT, SNOW, ASH, GUNPOWDER, COAL, DUST, BCOAL, FUSEPOWDER, BGLASS, SEED, FIREWORKS, BOMB, EMBER]),
     ("Liquids", &[WATER, OIL, LAVA, ACID, NITRO, BLOOD, MERCURY, SALTWATER, LN2, MWAX]),
     ("Gases", &[SMOKE, STEAM, METHANE, FIRE, CO2, HYDROGEN, OXYGEN, CAUSTIC]),
-    ("Solids", &[WALL, STONE, WOOD, METAL, GLASS, ICE, PLANT, TNT, GOLD, RUNE, BRICK, WAX, C4, FUSE, SPONGE, DIAMOND, WIRE, BATTERY]),
+    ("Solids", &[WALL, STONE, WOOD, METAL, GLASS, ICE, PLANT, TNT, GOLD, RUNE, BRICK, WAX, C4, FUSE, SPONGE, DIAMOND, WIRE, BATTERY, PACKED, TURF, SANDSTONE]),
     ("Special", &[CLONE, VOID, THUNDER, LIFE, SPARK]),
 ];
 
