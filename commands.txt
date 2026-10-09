@@ -1,0 +1,58 @@
+nordSoldPow - console commands            (by Crowelian 2026 + Sonnet)
+================================================================================
+Open console: ` (backtick) or F1.   Cheat menu: F2.   Tab = autocomplete, Up/Down = history.
+<arg> = required, [arg] = optional.  Names are lowercase ASCII.  Run `list weapons` etc. for valid names.
+
+## General
+help [cmd]               Show all commands or help for one command
+clear                    Clear the console output
+echo <text>              Print text
+fps                      Toggle FPS counter
+debug                    Toggle debug overlay (hitboxes, cell info)
+list <what>              List names: weapons | elements | planets | enemies | bosses | missions
+quit                     Exit the game
+
+## Player cheats
+give <weapon|all>        Give a weapon (full ammo). e.g.  give vainamoinen_gun
+ammo                     Refill all ammo
+heal                     Full health
+god                      Toggle invincibility
+ghost                    Toggle no-clip flight (walk through terrain)
+fly                      Toggle infinite jetpack fuel
+speed <mult>             Run speed multiplier (1 = normal)
+jump <mult>              Jump strength multiplier
+gravity <mult>           Override gravity multiplier for the player (0 = off, 1 = planet normal)
+kill                     Kill yourself
+respawn                  Respawn at spawn point
+silver <n>               Add silver (hack-silver currency)
+pos                      Print player cell position
+
+## World / travel
+tp <planet>              Teleport to a planet (loads it). e.g. tp helheim
+warp <x> <y>             Move player to cell x,y
+regen                    Regenerate current planet (fresh terrain, same seed)
+clearworld               Remove all powder (keeps walls border)
+unlock <all|planet>      Unlock travel to planet(s) / both systems
+weather <element|off>    Rain an element from the sky. e.g. weather lava
+split <on|off>           Toggle splitscreen (2 players)
+
+## Powder toy
+paint <element> [size]   Select element and brush size, and enter build mode. e.g. paint water 6
+drop <element> [radius]  Drop a blob of element above the player
+boom [radius]            Explosion at the cursor
+pause                    Pause/resume the powder simulation
+step                     Advance the simulation one frame while paused
+simspeed <n>             Simulation steps per frame (1-4)
+
+## Enemies / missions
+spawn <enemy> [n]        Spawn n enemies near cursor. e.g. spawn draugr 5
+boss <boss>              Spawn a boss. e.g. boss fenrir
+killall                  Kill all enemies
+missions                 List missions of the current planet with status
+complete <id|all>        Complete a mission by id (or all on this planet)
+shard                    Spawn a Sampo shard pickup next to you
+
+## Audio / view
+music <on|off>           Toggle music
+volume <0-1>             Master volume
+zoom <n>                 Camera zoom (1-6)

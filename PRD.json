@@ -1,0 +1,919 @@
+{
+ "project": "nordSoldPow",
+ "author": "Crowelian 2026 + Sonnet",
+ "version": "0.1.0",
+ "stack": {
+  "language": "Rust",
+  "engine": "macroquad 0.4",
+  "targets": [
+   "macos-aarch64 (primary)",
+   "windows",
+   "linux"
+  ]
+ },
+ "status_values": [
+  "todo",
+  "doing",
+  "done",
+  "blocked"
+ ],
+ "last_updated": "2026-10-09",
+ "continue_here": "See HANDOFF.md",
+ "phases": [
+  {
+   "id": "P0",
+   "title": "Planning & docs"
+  },
+  {
+   "id": "P1",
+   "title": "Project foundation"
+  },
+  {
+   "id": "P2",
+   "title": "Asset generation (all placeholders, replaceable)"
+  },
+  {
+   "id": "P3",
+   "title": "Powder sim (Powder Toy side)"
+  },
+  {
+   "id": "P4",
+   "title": "Soldat gameplay"
+  },
+  {
+   "id": "P5",
+   "title": "Worlds"
+  },
+  {
+   "id": "P6",
+   "title": "Enemies"
+  },
+  {
+   "id": "P7",
+   "title": "Story + missions"
+  },
+  {
+   "id": "P8",
+   "title": "Solar maps"
+  },
+  {
+   "id": "P9",
+   "title": "Cheats + console"
+  },
+  {
+   "id": "P10",
+   "title": "Audio"
+  },
+  {
+   "id": "P11",
+   "title": "Splitscreen"
+  },
+  {
+   "id": "P12",
+   "title": "UI / menus"
+  },
+  {
+   "id": "P13",
+   "title": "Polish + ship"
+  }
+ ],
+ "tasks": [
+  {
+   "id": "0.1",
+   "phase": "P0",
+   "title": "PRD.md written (product requirements)",
+   "files": "doc",
+   "optional": false,
+   "status": "done",
+   "notes": ""
+  },
+  {
+   "id": "0.2",
+   "phase": "P0",
+   "title": "PRD.json written (machine-readable source of truth for tasks)",
+   "files": "doc",
+   "optional": false,
+   "status": "done",
+   "notes": ""
+  },
+  {
+   "id": "0.3",
+   "phase": "P0",
+   "title": "task.md + tools/task.py (sync task.md from PRD.json)",
+   "files": "doc",
+   "optional": false,
+   "status": "done",
+   "notes": ""
+  },
+  {
+   "id": "0.4",
+   "phase": "P0",
+   "title": "docs/PLAN.md architecture + milestones",
+   "files": "doc",
+   "optional": false,
+   "status": "done",
+   "notes": ""
+  },
+  {
+   "id": "0.5",
+   "phase": "P0",
+   "title": "docs/LORE.md story, factions, planets, missions",
+   "files": "doc",
+   "optional": false,
+   "status": "done",
+   "notes": ""
+  },
+  {
+   "id": "0.6",
+   "phase": "P0",
+   "title": "assets.md (simple list at top + detail below)",
+   "files": "doc",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "0.7",
+   "phase": "P0",
+   "title": "commands.txt (console commands list)",
+   "files": "doc",
+   "optional": false,
+   "status": "done",
+   "notes": ""
+  },
+  {
+   "id": "0.8",
+   "phase": "P0",
+   "title": "HANDOFF.md (\"continue here\" for next AI / next session)",
+   "files": "doc",
+   "optional": false,
+   "status": "done",
+   "notes": ""
+  },
+  {
+   "id": "1.1",
+   "phase": "P1",
+   "title": "Cargo project (macroquad), release profile tuned for M1 Max",
+   "files": "Cargo.toml",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "1.2",
+   "phase": "P1",
+   "title": "Game state machine: Boot / Menu / SolarMap / Play / Pause / Story",
+   "files": "src/main.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "1.3",
+   "phase": "P1",
+   "title": "Asset loader with graceful fallbacks (missing file => placeholder, never crash)",
+   "files": "src/assets.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "1.4",
+   "phase": "P1",
+   "title": "Settings + save file (progress, unlocks, silver, completed missions)",
+   "files": "src/save.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "1.5",
+   "phase": "P1",
+   "title": "macOS .app bundle script (tools/bundle_macos.sh) + Win/Linux build notes",
+   "files": "tools/",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "1.6",
+   "phase": "P1",
+   "title": "GitHub Actions CI building mac/win/linux",
+   "files": ".github/workflows",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "2.1",
+   "phase": "P2",
+   "title": "Python pixel-art toolkit tools/gen_assets.py",
+   "files": "tools/",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "2.2",
+   "phase": "P2",
+   "title": "Player + enemy sprite sheets (Starbound-ish pixel style)",
+   "files": "assets/sprites",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "2.3",
+   "phase": "P2",
+   "title": "Boss sprites (9 bosses)",
+   "files": "assets/sprites",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "2.4",
+   "phase": "P2",
+   "title": "Weapon sprites (all guns)",
+   "files": "assets/weapons",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "2.5",
+   "phase": "P2",
+   "title": "Planet icons (14 planets + 2 stars + gate)",
+   "files": "assets/planets",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "2.6",
+   "phase": "P2",
+   "title": "Parallax backgrounds per planet",
+   "files": "assets/bg",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "2.7",
+   "phase": "P2",
+   "title": "UI: logo, icons, pickups, hotspot markers, crosshair",
+   "files": "assets/ui",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "2.8",
+   "phase": "P2",
+   "title": "Placeholder SFX (synthesised wav)",
+   "files": "assets/sfx",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "2.9",
+   "phase": "P2",
+   "title": "Placeholder music (synthesised kantele-style loops)",
+   "files": "assets/music",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "2.10",
+   "phase": "P2",
+   "title": "assets.md auto-generated from manifest (tools/gen_assets.py)",
+   "files": "assets.md",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.1",
+   "phase": "P3",
+   "title": "Element table (id, name, console key, colour, density, flags)",
+   "files": "src/elements.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.2",
+   "phase": "P3",
+   "title": "Grid world + double-buffer-free update with parity flag",
+   "files": "src/sim.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.3",
+   "phase": "P3",
+   "title": "Powders: sand, dirt, salt, snow, ash, gunpowder, coal",
+   "files": "src/sim.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.4",
+   "phase": "P3",
+   "title": "Liquids: water, oil, lava, acid, nitro, blood, mercury",
+   "files": "src/sim.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.5",
+   "phase": "P3",
+   "title": "Gases + fire: smoke, steam, methane, fire",
+   "files": "src/sim.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.6",
+   "phase": "P3",
+   "title": "Solids: wall, stone, wood, metal, glass, ice, plant, tnt, gold, rune",
+   "files": "src/sim.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.7",
+   "phase": "P3",
+   "title": "Special: clone, void, spark/thunder",
+   "files": "src/sim.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.8",
+   "phase": "P3",
+   "title": "Reactions (fire burns, water+lava, acid dissolves, ice melts, plant grows, sand+lava=glass)",
+   "files": "src/sim.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.9",
+   "phase": "P3",
+   "title": "Explosions (radius, chain reactions, terrain throw)",
+   "files": "src/sim.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.10",
+   "phase": "P3",
+   "title": "Brush painting tool (sizes, erase, line interpolation) + build mode",
+   "files": "src/ui.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.11",
+   "phase": "P3",
+   "title": "Element picker UI (categories, hotkeys)",
+   "files": "src/ui.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.12",
+   "phase": "P3",
+   "title": "Sim pause / step / speed",
+   "files": "src/sim.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.13",
+   "phase": "P3",
+   "title": "Sandbox save/load of world (png/bin)",
+   "files": "src/save.rs",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.14",
+   "phase": "P3",
+   "title": "Temperature simulation (Powder Toy heat model)",
+   "files": "src/sim.rs",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "3.15",
+   "phase": "P3",
+   "title": "Electricity (spark/metal/battery)",
+   "files": "src/sim.rs",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "4.1",
+   "phase": "P4",
+   "title": "Creature physics vs grid (walk, step-up, jump, swim, fall damage)",
+   "files": "src/entity.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "4.2",
+   "phase": "P4",
+   "title": "Jetpack with fuel + particles",
+   "files": "src/entity.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "4.3",
+   "phase": "P4",
+   "title": "Mouse aim, weapon rotation, flip",
+   "files": "src/player.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "4.4",
+   "phase": "P4",
+   "title": "Weapon table (16+ weapons incl vainamoinen_gun)",
+   "files": "src/weapons.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "4.5",
+   "phase": "P4",
+   "title": "Bullets: hitscan-step, tracer, terrain crater, ignite/freeze/acid effects",
+   "files": "src/bullet.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "4.6",
+   "phase": "P4",
+   "title": "Grenades + rocket + explosions that feed the powder sim",
+   "files": "src/bullet.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "4.7",
+   "phase": "P4",
+   "title": "Pickups: ammo, medkit, weapon crates, sampo shards, silver",
+   "files": "src/pickup.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "4.8",
+   "phase": "P4",
+   "title": "Health, death, respawn, blood particles",
+   "files": "src/player.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "4.9",
+   "phase": "P4",
+   "title": "Powder gun (shoots selected element) + sampo_gun (random element)",
+   "files": "src/weapons.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "4.10",
+   "phase": "P4",
+   "title": "Crouch / prone",
+   "files": "src/player.rs",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "4.11",
+   "phase": "P4",
+   "title": "Ragdoll death",
+   "files": "src/entity.rs",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "5.1",
+   "phase": "P5",
+   "title": "Noise + terrain generator (surface, caves, ores, pools, bedrock)",
+   "files": "src/terrain.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "5.2",
+   "phase": "P5",
+   "title": "Planet data: 9 Norse + 5 Kalevala planets (gravity, palette, hazards, enemies)",
+   "files": "src/planets.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "5.3",
+   "phase": "P5",
+   "title": "Environment hazards (ember rain, acid rain, snow, lightning, regolith dust)",
+   "files": "src/planets.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "5.4",
+   "phase": "P5",
+   "title": "Structures (huts, ruins, forges, basins) + hotspot placement",
+   "files": "src/terrain.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "5.5",
+   "phase": "P5",
+   "title": "Parallax background renderer",
+   "files": "src/render.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "5.6",
+   "phase": "P5",
+   "title": "Camera (zoom, follow, clamp) per viewport",
+   "files": "src/render.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "6.1",
+   "phase": "P6",
+   "title": "Enemy AI (patrol, chase, shoot, melee, flying)",
+   "files": "src/enemy.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "6.2",
+   "phase": "P6",
+   "title": "10 enemy kinds",
+   "files": "src/enemy.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "6.3",
+   "phase": "P6",
+   "title": "9 bosses with patterns",
+   "files": "src/boss.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "6.4",
+   "phase": "P6",
+   "title": "Spawners / waves (survive missions)",
+   "files": "src/enemy.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "7.1",
+   "phase": "P7",
+   "title": "Mission engine (Kill, Collect, Reach, ZoneCount, Survive, Boss, Interact)",
+   "files": "src/missions.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "7.2",
+   "phase": "P7",
+   "title": "Mission data: 4-5 per planet (main + optional)",
+   "files": "src/missions.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "7.3",
+   "phase": "P7",
+   "title": "Dialogue box + story scenes (intro, act breaks, ending)",
+   "files": "src/story.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "7.4",
+   "phase": "P7",
+   "title": "Hotspots (spring, rune stone, chest, forge, gate) interaction",
+   "files": "src/hotspot.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "7.5",
+   "phase": "P7",
+   "title": "Rewards + unlocks + planet progression",
+   "files": "src/missions.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "7.6",
+   "phase": "P7",
+   "title": "Optional tasks tracker / journal screen",
+   "files": "src/ui.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "8.1",
+   "phase": "P8",
+   "title": "Norse solar map screen (Sol + 9 worlds)",
+   "files": "src/map.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "8.2",
+   "phase": "P8",
+   "title": "Kalevala system map (5 planets)",
+   "files": "src/map.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "8.3",
+   "phase": "P8",
+   "title": "Aurora Gate / Bifrost travel between systems",
+   "files": "src/map.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "8.4",
+   "phase": "P8",
+   "title": "Landing / travel transition",
+   "files": "src/map.rs",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "9.1",
+   "phase": "P9",
+   "title": "Dev console UI (` or F1), history, tab-complete",
+   "files": "src/console.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "9.2",
+   "phase": "P9",
+   "title": "Command set (give, tp, spawn, god, paint, ...) matching commands.txt",
+   "files": "src/console.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "9.3",
+   "phase": "P9",
+   "title": "Cheat menu (F2) clickable toggles",
+   "files": "src/ui.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "9.4",
+   "phase": "P9",
+   "title": "commands.txt kept in sync with code (self-test)",
+   "files": "tests",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "10.1",
+   "phase": "P10",
+   "title": "SFX manager with per-event mapping + volume",
+   "files": "src/audio.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "10.2",
+   "phase": "P10",
+   "title": "Music per scene/planet with crossfade-less loop",
+   "files": "src/audio.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "11.1",
+   "phase": "P11",
+   "title": "Two viewports sharing one world",
+   "files": "src/render.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "11.2",
+   "phase": "P11",
+   "title": "P2 keyboard controls",
+   "files": "src/input.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "11.3",
+   "phase": "P11",
+   "title": "Co-op campaign + versus deathmatch",
+   "files": "src/main.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "11.4",
+   "phase": "P11",
+   "title": "Gamepad support (gilrs)",
+   "files": "src/input.rs",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "12.1",
+   "phase": "P12",
+   "title": "Main menu (campaign, sandbox, versus, settings, quit)",
+   "files": "src/menu.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "12.2",
+   "phase": "P12",
+   "title": "HUD (hp, fuel, ammo, weapon, mission tracker, element)",
+   "files": "src/ui.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "12.3",
+   "phase": "P12",
+   "title": "Pause menu + settings (volume, zoom, keys)",
+   "files": "src/menu.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "12.4",
+   "phase": "P12",
+   "title": "Minimap",
+   "files": "src/ui.rs",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "12.5",
+   "phase": "P12",
+   "title": "Credits screen: by Crowelian 2026 + Sonnet",
+   "files": "src/menu.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "13.1",
+   "phase": "P13",
+   "title": "Unit tests (sim rules, console parser, mission engine)",
+   "files": "tests",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "13.2",
+   "phase": "P13",
+   "title": "Playtest headless smoke test (sim + frames)",
+   "files": "src/main.rs",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "13.3",
+   "phase": "P13",
+   "title": "README with controls + build instructions",
+   "files": "README.md",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "13.4",
+   "phase": "P13",
+   "title": "Final zip of repo + commit + push",
+   "files": "",
+   "optional": false,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "13.5",
+   "phase": "P13",
+   "title": "Windows + Linux verified builds",
+   "files": ".",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "13.6",
+   "phase": "P13",
+   "title": "Finnish/Norse font + localisation",
+   "files": "assets/fonts",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "13.7",
+   "phase": "P13",
+   "title": "Online multiplayer",
+   "files": ".",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  },
+  {
+   "id": "13.8",
+   "phase": "P13",
+   "title": "Mod loader (assets/mods)",
+   "files": ".",
+   "optional": true,
+   "status": "todo",
+   "notes": ""
+  }
+ ]
+}
